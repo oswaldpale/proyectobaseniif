@@ -1,0 +1,94 @@
+﻿/** Login*/
+#logo_top 
+{
+    
+	background-image: url(../Imagenes/logo.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 120px;
+	margin-top: 5px;
+	margin-bottom: 7px;
+}
+
+#logo_bottom 
+{
+    
+	background-image: url(../Imagenes/bottom.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 40px;
+	margin-top: 4px;
+	margin-left: 50px;
+}
+
+/** Selección Items de Combobox */
+.list-item {
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    padding:3px 10px 3px 10px;
+    border:1px solid #fff;
+    border-bottom:1px solid #eeeeee;
+    white-space:normal;
+    color:#555;
+    
+}
+        
+.list-item h3 {
+    display:block;
+    font:inherit;
+    font-weight:bold;
+    margin:0px;
+    color:#222;
+}
+
+/** Buttons */
+.btnRefrescar
+{
+    background-image: url(images/32x32/1341526470_refresh.png) !important;
+}
+.btnResumen
+{
+    background-image: url(images/32x32/1341474912_options.png) !important;
+}
+.btnDetalle
+{
+    background-image: url(images/32x32/1341475000_catalog.png) !important;
+}
+.btnExportar
+{
+    background-image: url(images/32x32/nmExcel_2007.png) !important;
+}
+.btnReporte
+{
+    background-image: url(images/32x32/1346820388_pdf-sm.png) !important;
+    /*background-size: 32px 32px;*/
+}
+.btnGuardar
+{
+    background-image: url(images/32x32/1346818691_document-save.png) !important;
+}
+.btnNuevo
+{
+    background-image: url(images/32x32/1346818858_document-new.png) !important;
+}
+.btnSalir
+{
+    background-image: url(images/32x32/1346819325_Logout.png) !important;
+}
+.btnAjustar
+{
+    background-image: url(images/32x32/1346819829_currency_dollar.png) !important;
+}
+.btnYes
+{
+    background-image: url(images/32x32/1346817447_button_ok.png) !important;
+}
+.btnNo
+{
+    background-image: url(images/32x32/1346817441_button_cancel.png) !important;
+}
+.btnArticles
+{
+    background-image: url(images/32x32/1350068656_articles-o.png) !important;
+}

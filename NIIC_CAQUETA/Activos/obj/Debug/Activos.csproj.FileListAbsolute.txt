@@ -1,0 +1,166 @@
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Activos.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Activos.pdb
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Ext.Net.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Transformer.NET.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\WebActivatorEx.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Ext.Net.xml
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\bin\Transformer.NET.xml
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\obj\Debug\Activos.dll
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\cruiach\documents\visual studio 2012\Projects\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Ext.Net.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Activos.dll.config
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Activos.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Activos.pdb
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Ext.Net.Utilities.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\itextsharp.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Newtonsoft.Json.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Transformer.NET.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\WebActivatorEx.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Ext.Net.xml
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Ext.Net.Utilities.xml
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Newtonsoft.Json.xml
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\bin\Transformer.NET.xml
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\obj\Debug\Activos.dll
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\obj\Debug\Activos.pdb
+E:\copia pc de mis documentos\Visual Studio 2012\Projects\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Activos\Activos\bin\Activos.dll.config
+C:\Activos\Activos\bin\Activos.dll
+C:\Activos\Activos\bin\Activos.pdb
+C:\Activos\Activos\bin\Ext.Net.dll
+C:\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Activos\Activos\bin\itextsharp.dll
+C:\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Activos\Activos\bin\Transformer.NET.dll
+C:\Activos\Activos\bin\WebActivatorEx.dll
+C:\Activos\Activos\bin\Ext.Net.xml
+C:\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Activos\Activos\bin\Transformer.NET.xml
+C:\Activos\Activos\obj\Debug\Activos.dll
+C:\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.dll.config
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.pdb
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\itextsharp.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Transformer.NET.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\WebActivatorEx.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.xml
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Transformer.NET.xml
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.dll
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldo\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.dll.config
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Activos.pdb
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\itextsharp.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Transformer.NET.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\WebActivatorEx.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.xml
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\bin\Transformer.NET.xml
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.dll
+C:\Users\oswaldp\Documents\Visual Studio 2013\Projects\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Activos.dll.config
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Activos.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Activos.pdb
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Ext.Net.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\itextsharp.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Transformer.NET.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\WebActivatorEx.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Ext.Net.xml
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Users\oswaldp\OneDrive\Activos\Activos\bin\Transformer.NET.xml
+C:\Users\oswaldp\OneDrive\Activos\Activos\obj\Debug\Activos.dll
+C:\Users\oswaldp\OneDrive\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldp\OneDrive\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Activos.dll.config
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Activos.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Activos.pdb
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Ext.Net.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\itextsharp.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Newtonsoft.Json.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Transformer.NET.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\WebActivatorEx.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Ext.Net.xml
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Newtonsoft.Json.xml
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\bin\Transformer.NET.xml
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\obj\Debug\Activos.dll
+C:\Users\oswaldp\Documents\Proyecto\Activos\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Activos.dll.config
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Activos.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Activos.pdb
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Ext.Net.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\itextsharp.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Transformer.NET.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\WebActivatorEx.dll
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Ext.Net.xml
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.xml
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\bin\Transformer.NET.xml
+C:\Users\oswaldp\OneDrive\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+D:\one driver\NIIC_CAQUETA\Activos\bin\Activos.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Activos.pdb
+D:\one driver\NIIC_CAQUETA\Activos\bin\Ext.Net.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\itextsharp.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Microsoft.Web.Infrastructure.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Transformer.NET.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\WebActivatorEx.dll
+D:\one driver\NIIC_CAQUETA\Activos\bin\Ext.Net.xml
+D:\one driver\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.xml
+D:\one driver\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.xml
+D:\one driver\NIIC_CAQUETA\Activos\bin\Transformer.NET.xml
+D:\one driver\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+D:\one driver\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
+D:\one driver\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Activos.dll.config
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Activos.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Activos.pdb
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Ext.Net.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\itextsharp.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Transformer.NET.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\WebActivatorEx.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Ext.Net.xml
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.xml
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Transformer.NET.xml
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
+C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb

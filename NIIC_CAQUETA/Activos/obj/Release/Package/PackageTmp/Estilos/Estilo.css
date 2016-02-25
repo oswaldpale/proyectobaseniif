@@ -1,0 +1,36 @@
+﻿.CampoReservado {
+     background-color:white;
+     border-color:green;
+  
+}
+
+body {
+}
+.extnet {
+    background: url(../EstiloCSS/Imagenes/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#logo_top {
+	background-image: url(../EstiloCSS/images/logo.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 120px;
+	margin-top: 5px;
+	margin-bottom: 7px;
+}
+
+#logo_bottom 
+{
+    
+	background-image: url(../EstiloCSS/images/bottom.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 40px;
+	margin-top: 4px;
+	margin-left: 50px;
+}

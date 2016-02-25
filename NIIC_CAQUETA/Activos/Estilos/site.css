@@ -1,0 +1,33 @@
+﻿.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.outstanding-id {
+    color: #0404B4;
+}
+
+.outstanding-label {
+    color: gray;
+}
+
+.upload {
+    border: 1px dashed;
+}
+
+.upload img {
+    padding: 2px;
+}
+
+.simple-button {
+    border: 0;
+    background-color: transparent;
+    background-image: none;
+}

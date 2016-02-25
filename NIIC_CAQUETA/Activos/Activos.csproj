@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AACE62A3-D298-48E9-8E50-839E9D67F49E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Activos</RootNamespace>
+    <AssemblyName>Activos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net">
+      <HintPath>..\packages\Ext.NET.2.5.3.1\lib\net40\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\packages\Ext.NET.Utilities.2.5.0\lib\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SigcWeb.API, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SigcWeb.API.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Transformer.NET">
+      <HintPath>..\packages\Transformer.NET.2.1.1\lib\net35\Transformer.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Ext.NET.Utilities\BREAKING_CHANGES.txt" />
+    <Content Include="App_Readme\Ext.NET.Utilities\LICENSE.txt" />
+    <Content Include="App_Readme\Ext.NET.Utilities\README.txt" />
+    <Content Include="App_Readme\Ext.NET\BREAKING_CHANGES.txt" />
+    <Content Include="App_Readme\Ext.NET\CHANGELOG.txt" />
+    <Content Include="App_Readme\Ext.NET\LICENSE.txt" />
+    <Content Include="App_Readme\Ext.NET\README.txt" />
+    <Content Include="App_Readme\Transformer.NET\LICENSE.txt" />
+    <Content Include="App_Readme\Transformer.NET\README.txt" />
+    <Content Include="Estilos\Estilo.css" />
+    <Content Include="Estilos\extjs-extension.css" />
+    <Content Include="Estilos\loading110.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="itextsharp.dll" />
+    <Content Include="Modulo\Ajustes\CambioMetodoDepreciacion.aspx" />
+    <Content Include="Modulo\JS\Blob.js" />
+    <Content Include="Modulo\JS\extjs-extension.js" />
+    <Content Include="Modulo\JS\FileSaver.js" />
+    <Content Include="Modulo\JS\FormatoPeso.js" />
+    <Content Include="Modulo\JS\PanelAjusteDepreciacion.js" />
+    <Content Include="Modulo\JS\Panel.js" />
+    <Content Include="Modulo\JS\JScript1.js" />
+    <Content Include="Modulo\JS\JS_Inicio.js" />
+    <Content Include="Modulo\JS\papaparse.js" />
+    <Content Include="Modulo\JS\Site.js" />
+    <Content Include="Modulo\Basica\Caracteristica.aspx" />
+    <Content Include="Modulo\Basica\CargoFuncionario.aspx" />
+    <Content Include="Modulo\Basica\CentroCosto.aspx" />
+    <Content Include="Modulo\Basica\CentroEconomico.aspx" />
+    <Content Include="Modulo\Basica\Clase.aspx" />
+    <Content Include="Modulo\DarAsignacionActivo.aspx" />
+    <Content Include="Modulo\DarAltaActivoEmpleado.aspx" />
+    <Content Include="Modulo\CargarPlanoNiif.aspx" />
+    <Content Include="Modulo\DatosActivo.aspx" />
+    <Content Include="Modulo\Depreciacion.aspx" />
+    <Content Include="Modulo\DepreciacionGrupo.aspx" />
+    <Content Include="Modulo\Deterioro.aspx" />
+    <Content Include="Modulo\Basica\Empleado.aspx" />
+    <Content Include="Modulo\Basica\FuncionActivo.aspx" />
+    <Content Include="Modulo\Basica\MotivoAlta.aspx" />
+    <Content Include="Modulo\Basica\MotivoDeterioro.aspx" />
+    <Content Include="Modulo\Basica\Propiedad.aspx" />
+    <Content Include="Modulo\Ajustes\ReexpresarVidaUtil.aspx" />
+    <Content Include="Modulo\ReporteTrazabilidad.aspx" />
+    <Content Include="Modulo\Revaluacion.aspx" />
+    <Content Include="Modulo\Basica\Subclase.aspx" />
+    <Content Include="Modulo\Basica\SubComponente.aspx" />
+    <Content Include="Modulo\Templates\rprDetalleDepreciacionNiic.htm" />
+    <Content Include="Modulo\Templates\rptBaja.htm" />
+    <Content Include="Modulo\Templates\rptAsignacion.htm" />
+    <Content Include="Modulo\Templates\rptAlta.htm" />
+    <Content Include="Modulo\Templates\rptDetalleHistoricoDeterioro.htm" />
+    <Content Include="Modulo\Templates\rptDetalleHistoricoResidual.htm" />
+    <Content Include="Modulo\Templates\rprDetalleDepreciacionTributaria.htm" />
+    <Content Include="Modulo\Basica\TipoActivo.aspx" />
+    <Content Include="Modulo\Basica\TipoDeterioro.aspx" />
+    <Content Include="Modulo\Basica\Uge.aspx" />
+    <Content Include="Modulo\ValorResidual.aspx" />
+    <Content Include="Modulo\DarBajaActivo.aspx" />
+    <Content Include="Modulo\Templates\rptDetalle.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\Clases\Mensajes.cs" />
+    <Compile Include="Entidades\Activo.cs" />
+    <Compile Include="Entidades\AsignarActivo.cs" />
+    <Compile Include="Entidades\AtributosDepreciacion.cs" />
+    <Compile Include="Entidades\ActivoComponente.cs" />
+    <Compile Include="Entidades\CambiarMetodo.cs" />
+    <Compile Include="Controlador\Clases\EventTitle.cs" />
+    <Compile Include="Controlador\Parametrizacion.cs" />
+    <Compile Include="Controlador\Reportes.cs" />
+    <Compile Include="Entidades\ItemsAsignacion.cs" />
+    <Compile Include="Controlador\Clases\Conexion_Mysql.cs" />
+    <Compile Include="Entidades\ReexpresarRemanente.cs" />
+    <Compile Include="Controlador\Clases\ReportePDF.cs" />
+    <Compile Include="Entidades\RevaluacionActivo.cs" />
+    <Compile Include="Entidades\RevaluacionComponente.cs" />
+    <Compile Include="Entidades\ValorAvaluado.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Ajustes\CambioMetodoDepreciacion.aspx.cs">
+      <DependentUpon>CambioMetodoDepreciacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Ajustes\CambioMetodoDepreciacion.aspx.designer.cs">
+      <DependentUpon>CambioMetodoDepreciacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Caracteristica.aspx.cs">
+      <DependentUpon>Caracteristica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Caracteristica.aspx.designer.cs">
+      <DependentUpon>Caracteristica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\CargoFuncionario.aspx.cs">
+      <DependentUpon>CargoFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\CargoFuncionario.aspx.designer.cs">
+      <DependentUpon>CargoFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\CentroCosto.aspx.cs">
+      <DependentUpon>CentroCosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\CentroCosto.aspx.designer.cs">
+      <DependentUpon>CentroCosto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\CentroEconomico.aspx.cs">
+      <DependentUpon>CentroEconomico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\CentroEconomico.aspx.designer.cs">
+      <DependentUpon>CentroEconomico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Clase.aspx.cs">
+      <DependentUpon>Clase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Clase.aspx.designer.cs">
+      <DependentUpon>Clase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\DarAsignacionActivo.aspx.cs">
+      <DependentUpon>DarAsignacionActivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\DarAsignacionActivo.aspx.designer.cs">
+      <DependentUpon>DarAsignacionActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\DarAltaActivoEmpleado.aspx.cs">
+      <DependentUpon>DarAltaActivoEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\DarAltaActivoEmpleado.aspx.designer.cs">
+      <DependentUpon>DarAltaActivoEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\CargarPlanoNiif.aspx.cs">
+      <DependentUpon>CargarPlanoNiif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\CargarPlanoNiif.aspx.designer.cs">
+      <DependentUpon>CargarPlanoNiif.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\DatosActivo.aspx.cs">
+      <DependentUpon>DatosActivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\DatosActivo.aspx.designer.cs">
+      <DependentUpon>DatosActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Depreciacion.aspx.cs">
+      <DependentUpon>Depreciacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Depreciacion.aspx.designer.cs">
+      <DependentUpon>Depreciacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\DepreciacionGrupo.aspx.cs">
+      <DependentUpon>DepreciacionGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\DepreciacionGrupo.aspx.designer.cs">
+      <DependentUpon>DepreciacionGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Deterioro.aspx.cs">
+      <DependentUpon>Deterioro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Deterioro.aspx.designer.cs">
+      <DependentUpon>Deterioro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Empleado.aspx.cs">
+      <DependentUpon>Empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Empleado.aspx.designer.cs">
+      <DependentUpon>Empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\FuncionActivo.aspx.cs">
+      <DependentUpon>FuncionActivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\FuncionActivo.aspx.designer.cs">
+      <DependentUpon>FuncionActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\MotivoAlta.aspx.cs">
+      <DependentUpon>MotivoAlta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\MotivoAlta.aspx.designer.cs">
+      <DependentUpon>MotivoAlta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\MotivoDeterioro.aspx.cs">
+      <DependentUpon>MotivoDeterioro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\MotivoDeterioro.aspx.designer.cs">
+      <DependentUpon>MotivoDeterioro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Propiedad.aspx.cs">
+      <DependentUpon>Propiedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Propiedad.aspx.designer.cs">
+      <DependentUpon>Propiedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Ajustes\ReexpresarVidaUtil.aspx.cs">
+      <DependentUpon>ReexpresarVidaUtil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Ajustes\ReexpresarVidaUtil.aspx.designer.cs">
+      <DependentUpon>ReexpresarVidaUtil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\ReporteTrazabilidad.aspx.cs">
+      <DependentUpon>ReporteTrazabilidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\ReporteTrazabilidad.aspx.designer.cs">
+      <DependentUpon>ReporteTrazabilidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Revaluacion.aspx.cs">
+      <DependentUpon>Revaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Revaluacion.aspx.designer.cs">
+      <DependentUpon>Revaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Subclase.aspx.cs">
+      <DependentUpon>Subclase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Subclase.aspx.designer.cs">
+      <DependentUpon>Subclase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\SubComponente.aspx.cs">
+      <DependentUpon>SubComponente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\SubComponente.aspx.designer.cs">
+      <DependentUpon>SubComponente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\TipoActivo.aspx.cs">
+      <DependentUpon>TipoActivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\TipoActivo.aspx.designer.cs">
+      <DependentUpon>TipoActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\TipoDeterioro.aspx.cs">
+      <DependentUpon>TipoDeterioro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\TipoDeterioro.aspx.designer.cs">
+      <DependentUpon>TipoDeterioro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\Basica\Uge.aspx.cs">
+      <DependentUpon>Uge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\Basica\Uge.aspx.designer.cs">
+      <DependentUpon>Uge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\ValorResidual.aspx.cs">
+      <DependentUpon>ValorResidual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\ValorResidual.aspx.designer.cs">
+      <DependentUpon>ValorResidual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo\DarBajaActivo.aspx.cs">
+      <DependentUpon>DarBajaActivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulo\DarBajaActivo.aspx.designer.cs">
+      <DependentUpon>DarBajaActivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="App_Readme\Ext.NET\Sample.Web.config" />
+    <None Include="Properties\PublishProfiles\Activos.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modulo\Reporte\" />
+    <Folder Include="Planos\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2698</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3039/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

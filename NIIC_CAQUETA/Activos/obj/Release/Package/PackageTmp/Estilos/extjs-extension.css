@@ -1,0 +1,109 @@
+﻿/* StyleSheet extj-extension */
+#unlicensed {
+    display: none !important;
+}
+
+/*Ext.button.Button*/
+.x-btn-inner {
+    font-weight: normal !important;
+    font-size: 13px !important;
+}
+
+/*Ext.form.FieldSet*/
+.x-fieldset-header-text {
+    font-weight: bold;
+    font-size: 13px;
+    color: gray;
+}
+
+/*Ext.panel.Panel*/
+.x-panel, .x-panel-body-default {
+    background-color: white !important;
+}
+
+/*Ext.grid.Panel*/
+.x-column-header {
+    font-weight: normal !important;
+}
+
+/*Ext.Msg.info*/
+.x-infopanel-primary {
+    border: solid 1px #2d6ca2 !important;
+    background: #d9e8f5 !important;
+}
+
+    .x-infopanel-primary .x-infopanel-header .x-header-text {
+        color: #2a5270 !important;
+    }
+
+    .x-infopanel-primary .x-infopanel-body {
+        background: #d9e8f5 !important;
+        color: #2a5270 !important;
+    }
+
+.x-infopanel-danger {
+    border: solid 1px #ebccd1 !important;
+    background: #f2dede !important;
+}
+
+    .x-infopanel-danger .x-infopanel-header .x-header-text {
+        color: #a94442 !important;
+    }
+
+    .x-infopanel-danger .x-infopanel-body {
+        background: #f2dede !important;
+        color: #a94442 !important;
+    }
+
+.x-infopanel-info {
+    border: solid 1px #bce8f1 !important;
+    background: #d9edf7 !important;
+}
+
+    .x-infopanel-info .x-infopanel-header .x-header-text {
+        color: #31708f !important;
+    }
+
+    .x-infopanel-info .x-infopanel-body {
+        background: #d9edf7 !important;
+        color: #31708f !important;
+    }
+
+.x-infopanel-success {
+    border: solid 1px #d6e9c6 !important;
+    background: #dff0d8 !important;
+}
+
+    .x-infopanel-success .x-infopanel-header .x-header-text {
+        color: #3c763d !important;
+    }
+
+    .x-infopanel-success .x-infopanel-body {
+        background: #dff0d8 !important;
+        color: #3c763d !important;
+    }
+
+.x-infopanel-warning {
+    border: solid 1px #faebcc !important;
+    background: #fcf8e3 !important;
+}
+
+    .x-infopanel-warning .x-infopanel-header .x-header-text {
+        color: #8a6d3b !important;
+    }
+
+    .x-infopanel-warning .x-infopanel-body {
+        background: #fcf8e3 !important;
+        color: #8a6d3b !important;
+    }
+
+
+    body {
+}
+.extnet {
+    background: url(../../../../Content/images/uafondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
