@@ -84,7 +84,7 @@
 
                             </Items>
                         </ext:Container>
-                        
+
                         <ext:Container ID="Container4" runat="server" Layout="HBoxLayout">
                             <Items>
                                 <ext:TextArea ID="txt_conceptos" runat="server" Margins="5 0 10 5" Flex="1" EmptyText="Observación."
@@ -95,95 +95,72 @@
                         <%--- Detalle Componentes -----%>
                         <ext:Container ID="Container18" runat="server">
                             <Items>
-                                <ext:GridPanel ID="GridPanel1" runat="server" Flex="1" Margins="10 0 0 5" Height="350" Border="true">
-                                            <Store>
-                                                <ext:Store ID="store_grilla_valorResidual" runat="server" GroupField="Componente">
-                                                    <Model>
-                                                        <ext:Model ID="Model19" runat="server">
-                                                            <Fields>
-                                                                <ext:ModelField Name="Componente" />
-                                                                <ext:ModelField Name="costo_inicial" />
-                                                                <ext:ModelField Name="Porcentaje_ci" />
-                                                                <ext:ModelField Name="valorResidualAnterior" />
-                                                                <ext:ModelField Name="valorResidualActual" />
-                                                                <ext:ModelField Name="ajusteValorResidual" />
-                                                                <ext:ModelField Name="fecha" Type="Date" />
-                                                            </Fields>
-                                                        </ext:Model>
+                                <ext:GridPanel ID="GRESIDUAL" runat="server" Flex="1" Margins="10 0 0 5" Height="350" Border="true">
+                                    <Store>
+                                        <ext:Store ID="STORERESIDUAL" runat="server" GroupField="Componente">
+                                            <Model>
+                                                <ext:Model ID="Model19" runat="server">
+                                                    <Fields>
+                                                        <ext:ModelField Name="id" Type="String" />
+                                                        <ext:ModelField Name="valor" Type="Int" />
+                                                        <ext:ModelField Name="nombre" Type="String" />
+                                                        <ext:ModelField Name="placa" Type="String" />
+                                                        <ext:ModelField Name="basedepreciable" Type="Int" />
+                                                        <ext:ModelField Name="importelibros" Type="Int" />
+                                                    </Fields>
+                                                </ext:Model>
+                                            </Model>
+                                            <Sorters>
+                                                <ext:DataSorter Property="fecha" Direction="DESC" />
+                                            </Sorters>
+                                        </ext:Store>
+                                    </Store>
+                                    <ColumnModel ID="ColumnModel1" runat="server">
+                                        <Columns>
+                                            <ext:Column ID="Column2" runat="server" DataIndex="placa" Header="Placa" Flex="1" />
+                                            <ext:Column ID="Column1" runat="server" DataIndex="nombre" Header="Descripción" Flex="2" />
+                                            <ext:Column ID="Column9" runat="server" DataIndex="valor" Header="Residual" Flex="1">
+                                                <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                            </ext:Column>
+                                            <ext:Column ID="Column3" runat="server" DataIndex="basedepreciable" Header="Base Depreciable" Flex="1">
+                                                <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                            </ext:Column>
+                                            <ext:Column ID="Column4" runat="server" DataIndex="importelibros" Header="Importe Libros" Flex="1">
+                                                <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                            </ext:Column>
+                                        </Columns>
+                                    </ColumnModel>
+                                    <SelectionModel>
+                                        <ext:CellSelectionModel ID="CellSelectionModel1" runat="server" />
+                                    </SelectionModel>
 
-                                                    </Model>
-                                                    <Sorters>
-                                                        <ext:DataSorter Property="fecha" Direction="DESC" />
-                                                    </Sorters>
-                                                </ext:Store>
-                                            </Store>
-                                            <ColumnModel ID="ColumnModel1" runat="server">
-                                                <Columns>
-                                                    <ext:Column ID="Column8" runat="server" DataIndex="fecha" Header="Fecha Revisión" Flex="1">
-                                                        <Renderer Format="Date" FormatArgs="'Y-m-d'" />
-                                                    </ext:Column>
-                                                    <ext:Column ID="Column1" runat="server" DataIndex="Componente" Header="Componente" Flex="4" />
-                                                    <ext:Column ID="Column9" runat="server" DataIndex="costo_inicial" Header="Costo Inicial" Flex="1">
-                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                    </ext:Column>
-                                                    <ext:Column ID="Column13" runat="server" DataIndex="Porcentaje_ci" Header="Porcentaje" Flex="1">
-                                                        <Renderer Handler="return value +'%';" />
-                                                    </ext:Column>
-
-                                                    <ext:Column ID="Column3" runat="server" DataIndex="valorResidualAnterior" Header="Valor Anterior" Flex="1">
-                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                    </ext:Column>
-                                                    <ext:Column ID="valorResidualActual" runat="server" DataIndex="valorResidualActual" Header="Valor Actual" Flex="1">
-                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                    </ext:Column>
-
-                                                </Columns>
-                                            </ColumnModel>
-                                            <Features>
-                                                <ext:Grouping ID="Group1" runat="server" GroupHeaderTplString="{name}" HideGroupedHeader="true"
-                                                    EnableGroupingMenu="false" />
-                                            </Features>
-                                            <SelectionModel>
-                                                <ext:CellSelectionModel ID="CellSelectionModel1" runat="server" />
-                                            </SelectionModel>
-
-                                            <Plugins>
-                                                <ext:CellEditing ID="CellEditing1" runat="server">
-                                                </ext:CellEditing>
-                                            </Plugins>
-                                            <BottomBar>
-                                                <ext:PagingToolbar ID="PagingToolbar3" runat="server" />
-                                            </BottomBar>
-                                        </ext:GridPanel>
+                                    <Plugins>
+                                        <ext:CellEditing ID="CellEditing1" runat="server">
+                                        </ext:CellEditing>
+                                    </Plugins>
+                                    <BottomBar>
+                                        <ext:PagingToolbar ID="PagingToolbar3" runat="server" />
+                                    </BottomBar>
+                                </ext:GridPanel>
                             </Items>
                         </ext:Container>
                     </Items>
                     <FooterBar>
                         <ext:Toolbar runat="server" ID="asdas">
                             <Items>
+
+                                <ext:Button runat="server" ID="BTNANULAR" Text="ANULAR" Icon="Delete" Scale="Small" UI="Default" Margins="5 0 0 5">
+                                    <Listeners>
+                                    </Listeners>
+                                </ext:Button>
+                                <ext:ToolbarFill />
                                 <ext:Button ID="btn_guardar" runat="server" Text="GUARDAR" Disabled="false" Width="100" Margins="5 0 0 5"
                                     Icon="Disk" ToolTip="Guardar Deterioro.">
                                     <Listeners>
-                                        <Click Handler="
-                                        var r = App.txt_valornuevo.getValue();
-                                        r= r.replace(/[\.]/g, '');
-                                        if (#{FormPanel1}.getForm().isValid()) { App.direct.GrabarValorResidual(
-                                                    [
-                                                    App.dfd_fecha.getValue(),
-                                                    App.idempleado.getValue(), 
-                                                    r,
-                                                    App.txt_conceptos.getValue()
-                                                    ]); 
-                                                    }else{'true'}" />
-                                    </Listeners>
-                                </ext:Button>
-                                <ext:Button ID="btn_limpiar" runat="server" Text="LIMPIAR" Width="100" Margins="5 0 0 5" Icon="Erase">
-                                    <Listeners>
-                                        <Click Handler="App.FormPanel1.reset();Ext.ComponentQuery.query('#GridPanel1')[0].getStore().removeAll();" />
+                                        <Click Handler=" if (#{FormPanel1}.getForm().isValid()) { App.direct.GrabarValorResidual();  }else{'true'}" />
                                     </Listeners>
                                 </ext:Button>
                             </Items>
-
                         </ext:Toolbar>
                     </FooterBar>
                     <%--*************************************************--%>
@@ -260,7 +237,7 @@
                         </Columns>
                     </ColumnModel>
                     <DirectEvents>
-                       <%-- <ItemDblClick OnEvent="GRRECUPERACIONREVALUACION" After="#{TRECUPERACION}.fireEvent('click');">
+                        <%-- <ItemDblClick OnEvent="GRRECUPERACIONREVALUACION" After="#{TRECUPERACION}.fireEvent('click');">
                             <ExtraParams>
                                 <ext:Parameter Name="HNcontrol" Value="record.get('Ncontrol')" Mode="Raw" />
                                 <ext:Parameter Name="HFecha" Value="record.get('Fecha')" Mode="Raw" />

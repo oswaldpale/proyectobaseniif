@@ -11,6 +11,7 @@ namespace Activos.Clases
 {
     public class GeneradorReportes
     {
+        #region Informes
         public string ConsultarTrazabilidadReporte(string IdActivo,string TipoNorma) {
             string CadenaNorma = (TipoNorma == "") ? "" : "    AND a.TipoNorma = '" + TipoNorma + "' ";
             string cad = "SELECT "
@@ -467,6 +468,7 @@ namespace Activos.Clases
                 });
             }
         }
+        #endregion
         /// <summary>
         ///  Crea la lista que se va imprimir para visualizar la depreciacion antes de grabar.
         /// </summary>
@@ -475,7 +477,6 @@ namespace Activos.Clases
         /// <returns></returns>
         public List<ListaComponenteExcel> ListaActivosDeprExcel(List<Activo> ListaActivos,string parteExcel)
         {
-            List<Activo> FiltroLimitante = new List<Activo>();
             List<ListaComponenteExcel> ListaExcel = new List<ListaComponenteExcel>();
             
             foreach (Activo itemActivo in ListaActivos)
@@ -501,7 +502,9 @@ namespace Activos.Clases
                     comp.Deterioro = itemcomp.ajust_vr_deterioro;
                     comp.Razonable = itemcomp.ajust_vr_razonable;
                     comp.DepreciacionMes = itemcomp.vr_dep_mes;
+                    comp.DepreciacionAcumuladaAnterior = itemcomp.vr_dep_acumulada_old;
                     comp.DepreciacionAcumulada = itemcomp.vr_dep_acumulada;
+                    comp.BaseDepreciableAnterior = itemcomp.base_deprec_old;
                     comp.BaseDepreciable = itemcomp.base_deprec;
                     comp.ImporteLibros = itemcomp.vr_importe_libros;
                     ListaExcel.Add(comp);
@@ -532,7 +535,9 @@ namespace Activos.Clases
         public double Razonable { get; set; }
         public double Deterioro { get; set; }
         public double DepreciacionMes { get; set; }
+        public double DepreciacionAcumuladaAnterior { get; set; }
         public double DepreciacionAcumulada { get; set; }
+        public double BaseDepreciableAnterior { get; set; }
         public double BaseDepreciable { get; set; }
         public double ImporteLibros { get; set; }
     }

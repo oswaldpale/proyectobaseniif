@@ -23,8 +23,10 @@ namespace Activos.Clases
         public double ajust_vr_razonable { get; set; }
         public double ajust_vr_deterioro { get; set; }
         public double costo_inicial { get; set; }
+        public double vr_dep_acumulada_old { get; set; }
         public double vr_dep_acumulada { get; set; }
         public double vr_importe_libros { get; set; }
+        public double base_deprec_old { get; set; }
         public double base_deprec { get; set; }
         public string nombre_depreciacion { get; set; }
         public string Depreciable { get; set; }

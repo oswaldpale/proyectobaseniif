@@ -10,7 +10,7 @@ using Activos.Clases;
 
 namespace Activos.Modulo
 {
-    public partial class CrearSubclase : SigcWeb.API.Shared.Page
+    public partial class Subclase : SigcWeb.API.Shared.Page
     {
         protected override void Page_Load(object sender, EventArgs e)
         {

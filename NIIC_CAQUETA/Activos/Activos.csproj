@@ -110,6 +110,10 @@
     <Content Include="Estilos\loading110.gif" />
     <Content Include="Global.asax" />
     <Content Include="itextsharp.dll" />
+    <Content Include="JS\extjs-extension.js" />
+    <Content Include="JS\JScript1.js" />
+    <Content Include="JS\JS_Inicio.js" />
+    <Content Include="JS\Site.js" />
     <Content Include="Modulo\Ajustes\CambioMetodoDepreciacion.aspx" />
     <Content Include="Modulo\JS\Blob.js" />
     <Content Include="Modulo\JS\extjs-extension.js" />
@@ -130,7 +134,6 @@
     <Content Include="Modulo\DarAltaActivoEmpleado.aspx" />
     <Content Include="Modulo\CargarPlanoNiif.aspx" />
     <Content Include="Modulo\DatosActivo.aspx" />
-    <Content Include="Modulo\Depreciacion.aspx" />
     <Content Include="Modulo\DepreciacionGrupo.aspx" />
     <Content Include="Modulo\Deterioro.aspx" />
     <Content Include="Modulo\Basica\Empleado.aspx" />
@@ -249,13 +252,6 @@
     </Compile>
     <Compile Include="Modulo\DatosActivo.aspx.designer.cs">
       <DependentUpon>DatosActivo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo\Depreciacion.aspx.cs">
-      <DependentUpon>Depreciacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modulo\Depreciacion.aspx.designer.cs">
-      <DependentUpon>Depreciacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulo\DepreciacionGrupo.aspx.cs">
       <DependentUpon>DepreciacionGrupo.aspx</DependentUpon>
@@ -391,6 +387,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo\Reporte\" />
+    <Folder Include="Modulo\TempDep\" />
     <Folder Include="Planos\" />
     <Folder Include="Reportes\" />
   </ItemGroup>

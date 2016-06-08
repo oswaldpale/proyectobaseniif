@@ -10,7 +10,7 @@
 namespace Activos.Modulo {
     
     
-    public partial class CrearSubclase {
+    public partial class Subclase {
         
         /// <summary>
         /// Control form1.

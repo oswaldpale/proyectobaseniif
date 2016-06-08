@@ -164,3 +164,20 @@ C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\bin\Transformer.NET.x
 C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
 C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
 C:\Users\strongher\Documents\Proyecto\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Activos.dll.config
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Activos.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Activos.pdb
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Ext.Net.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\itextsharp.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Transformer.NET.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\WebActivatorEx.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Ext.Net.xml
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.xml
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.xml
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Transformer.NET.xml
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
+C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb

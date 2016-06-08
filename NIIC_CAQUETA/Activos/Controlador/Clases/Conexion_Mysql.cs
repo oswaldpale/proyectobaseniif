@@ -9,13 +9,14 @@ namespace Activos.Clases
     class Conexion_Mysql
     {
 
+        public String Tiempo = "";
         //MySqlConnection Conexion = null;
 
         public string cad_Conexion()
         {
             string retValue = string.Empty;
             retValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["conexion_ActivoFijo"].ConnectionString;
-            return retValue;
+            return retValue + Tiempo;
         }
 
         public MySqlConnection ConectarMysql() //Metoto para conectar a C# a MySQL
@@ -159,8 +160,8 @@ namespace Activos.Clases
             MySqlTransaction transa = mySqlConnection.BeginTransaction();
             MySqlCommand mySqlCommand;
 
-            try
-            {
+            //try
+            //{
                 for (int i = 0; i < Sentencia.Count; i++)
                 {
                     if (Sentencia[i].Length > 0)
@@ -173,17 +174,17 @@ namespace Activos.Clases
                 transa.Commit();
                 return true;
             }
-            catch (Exception exc)
-            {
-                transa.Rollback();
-                return false;
-                throw new Exception("No se realizó ninguna operación en la Base de Datos."+ exc);
+            //catch (Exception exc)
+            //{
+            //    transa.Rollback();
+            //    return false;
+            //    throw new Exception("No se realizó ninguna operación en la Base de Datos."+ exc);
                 
-            }
-            finally
-            {
-                mySqlConnection.Close();
-            }
-        }
+            //}
+            //finally
+            //{
+            //    mySqlConnection.Close();
+            //}
+        //}
     }
 }

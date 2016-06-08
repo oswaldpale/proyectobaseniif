@@ -86,7 +86,7 @@
     </script>
 </head>
 <body>
-    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Neptune" AjaxTimeout="560000000" />
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Neptune" AjaxTimeout="95000000" />
     <ext:TaskManager ID="TaskManager1" runat="server">
         <Tasks>
             <ext:Task

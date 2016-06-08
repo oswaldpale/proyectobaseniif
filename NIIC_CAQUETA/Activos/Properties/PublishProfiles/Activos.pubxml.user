@@ -15,85 +15,85 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET.Utilities/BREAKING_CHANGES.txt">
-      <publishTime>07/27/2015 17:38:08</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET.Utilities/LICENSE.txt">
-      <publishTime>07/27/2015 17:38:08</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET.Utilities/README.txt">
-      <publishTime>07/27/2015 17:38:04</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET/BREAKING_CHANGES.txt">
-      <publishTime>07/27/2015 17:38:06</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET/CHANGELOG.txt">
-      <publishTime>07/27/2015 17:38:06</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET/LICENSE.txt">
-      <publishTime>07/27/2015 17:38:02</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET/README.txt">
-      <publishTime>07/27/2015 17:38:02</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Ext.NET/Sample.Web.config">
-      <publishTime>07/27/2015 17:38:02</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Transformer.NET/LICENSE.txt">
-      <publishTime>07/27/2015 17:38:10</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="App_Readme/Transformer.NET/README.txt">
-      <publishTime>07/27/2015 17:38:10</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="bin/Activos.dll">
-      <publishTime>11/05/2015 11:20:42</publishTime>
+      <publishTime>06/08/2016 11:11:39</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>07/27/2015 17:36:18</publishTime>
+      <publishTime>06/04/2016 10:26:47</publishTime>
     </File>
     <File Include="bin/Ext.Net.dll">
-      <publishTime>07/27/2015 19:02:40</publishTime>
+      <publishTime>06/04/2016 10:26:55</publishTime>
     </File>
     <File Include="bin/Ext.Net.Utilities.dll">
-      <publishTime>07/27/2015 17:40:04</publishTime>
+      <publishTime>06/04/2016 10:26:57</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
-      <publishTime>07/27/2015 17:33:06</publishTime>
+      <publishTime>06/04/2016 10:26:50</publishTime>
     </File>
     <File Include="bin/JSONLibrary.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>07/27/2015 18:52:02</publishTime>
+      <publishTime>06/04/2016 10:26:57</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>07/27/2015 17:33:00</publishTime>
+      <publishTime>06/04/2016 10:26:48</publishTime>
     </File>
     <File Include="bin/MySql.Data.Entity.EF6.dll">
-      <publishTime>07/27/2015 17:32:50</publishTime>
+      <publishTime>06/04/2016 10:26:48</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>07/27/2015 18:55:28</publishTime>
+      <publishTime>06/04/2016 10:26:58</publishTime>
     </File>
     <File Include="bin/SigcWeb.API.dll">
-      <publishTime>07/27/2015 17:32:34</publishTime>
+      <publishTime>06/04/2016 10:26:49</publishTime>
     </File>
     <File Include="bin/Transformer.NET.dll">
-      <publishTime>07/27/2015 18:57:10</publishTime>
+      <publishTime>06/04/2016 10:26:59</publishTime>
     </File>
     <File Include="bin/WebActivatorEx.dll">
-      <publishTime>07/27/2015 18:57:10</publishTime>
+      <publishTime>06/04/2016 10:27:00</publishTime>
     </File>
     <File Include="Default.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Estilos/Estilo.css">
-      <publishTime>07/28/2015 15:38:24</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="Estilos/extjs-extension.css">
-      <publishTime>07/28/2015 15:35:44</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="Estilos/loading110.gif">
-      <publishTime>10/15/2015 09:42:44</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="Estilos/site.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -105,7 +105,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/27/2015 17:30:20</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="Imagenes/128x128/1337047853_URL_historial.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -210,82 +210,82 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="itextsharp.dll">
-      <publishTime>07/27/2015 17:33:06</publishTime>
+      <publishTime>06/04/2016 10:26:50</publishTime>
     </File>
     <File Include="JS/extjs-extension.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="JS/JScript1.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="JS/JS_Inicio.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="JS/Panel.js">
       <publishTime>05/12/2015 20:33:17</publishTime>
     </File>
     <File Include="JS/Site.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="Login.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/Ajustes/CambioMetodoDepreciacion.aspx">
-      <publishTime>08/18/2015 22:00:02</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Ajustes/ContenedorAjustes.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/Ajustes/ReexpresarVidaUtil.aspx">
-      <publishTime>08/18/2015 21:44:22</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/BajaActivo.aspx">
       <publishTime>02/01/2015 16:34:09</publishTime>
     </File>
     <File Include="Modulo/Basica/Caracteristica.aspx">
-      <publishTime>07/27/2015 17:39:28</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/CargoFuncionario.aspx">
-      <publishTime>07/27/2015 17:39:28</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/CentroCosto.aspx">
-      <publishTime>07/27/2015 17:39:26</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/CentroEconomico.aspx">
-      <publishTime>07/27/2015 17:39:24</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/Clase.aspx">
-      <publishTime>07/27/2015 17:39:22</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/Empleado.aspx">
-      <publishTime>07/27/2015 17:39:20</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/FuncionActivo.aspx">
-      <publishTime>07/27/2015 17:39:16</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/MotivoAlta.aspx">
-      <publishTime>07/27/2015 17:39:18</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/MotivoDeterioro.aspx">
-      <publishTime>07/27/2015 17:39:16</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/Propiedad.aspx">
-      <publishTime>07/27/2015 17:39:18</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/Subclase.aspx">
-      <publishTime>10/13/2015 12:11:56</publishTime>
+      <publishTime>06/04/2016 15:04:13</publishTime>
     </File>
     <File Include="Modulo/Basica/SubComponente.aspx">
-      <publishTime>10/13/2015 10:43:42</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/TipoActivo.aspx">
-      <publishTime>07/27/2015 17:39:02</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/TipoDeterioro.aspx">
-      <publishTime>07/27/2015 17:39:00</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Basica/Uge.aspx">
-      <publishTime>07/27/2015 17:38:56</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Caracteristica.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -294,7 +294,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/03/2015 22:20:56</publishTime>
     </File>
     <File Include="Modulo/CargarPlanoNiif.aspx">
-      <publishTime>07/27/2015 17:36:04</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/CargarValorResidualPlano.aspx">
       <publishTime>02/06/2015 16:23:13</publishTime>
@@ -312,31 +312,31 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/07/2015 16:56:10</publishTime>
     </File>
     <File Include="Modulo/DarAltaActivoEmpleado.aspx">
-      <publishTime>10/15/2015 12:12:47</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/DarAsignacionActivo.aspx">
-      <publishTime>10/28/2015 14:42:29</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/DarAsignacionporPlano.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/DarBajaActivo.aspx">
-      <publishTime>09/25/2015 07:34:31</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/DatosActivo.aspx">
-      <publishTime>07/27/2015 17:35:46</publishTime>
+      <publishTime>06/04/2016 10:26:45</publishTime>
     </File>
     <File Include="Modulo/Depreciacion.aspx">
-      <publishTime>08/16/2015 05:31:02</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/DepreciacionGrupo.aspx">
-      <publishTime>10/15/2015 12:32:18</publishTime>
+      <publishTime>06/07/2016 19:48:41</publishTime>
     </File>
     <File Include="Modulo/DepreciacionGrupo.aspx.cs">
       <publishTime>10/04/2015 16:28:43</publishTime>
     </File>
     <File Include="Modulo/Deterioro.aspx">
-      <publishTime>10/30/2015 08:54:53</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Empleado.aspx">
       <publishTime>03/02/2015 18:04:34</publishTime>
@@ -345,34 +345,34 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/07/2015 17:02:48</publishTime>
     </File>
     <File Include="Modulo/JS/Blob.js">
-      <publishTime>10/14/2015 18:13:23</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/extjs-extension.js">
-      <publishTime>07/27/2015 17:39:32</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/FileSaver.js">
-      <publishTime>10/14/2015 18:13:23</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/FormatoPeso.js">
-      <publishTime>07/27/2015 17:39:32</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/JScript1.js">
-      <publishTime>07/27/2015 17:39:32</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/JS_Inicio.js">
-      <publishTime>07/27/2015 17:39:30</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/Panel.js">
-      <publishTime>07/27/2015 17:39:30</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/PanelAjusteDepreciacion.js">
-      <publishTime>07/28/2015 15:08:30</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/papaparse.js">
-      <publishTime>10/14/2015 18:13:23</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/JS/Site.js">
-      <publishTime>07/27/2015 17:39:30</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/MotivoAlta.aspx">
       <publishTime>04/07/2015 17:07:45</publishTime>
@@ -387,19 +387,19 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>05/12/2014 03:37:43</publishTime>
     </File>
     <File Include="Modulo/ReimprimirAlta.aspx">
-      <publishTime>07/27/2015 17:34:56</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/ReporteNiif.aspx">
-      <publishTime>07/27/2015 17:34:48</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/ReporteTrazabilidad.aspx">
-      <publishTime>10/23/2015 15:28:11</publishTime>
+      <publishTime>06/04/2016 15:10:26</publishTime>
     </File>
     <File Include="Modulo/ResponsableActivo.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/Revaluacion.aspx">
-      <publishTime>10/30/2015 10:08:13</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Subclase.aspx">
       <publishTime>05/02/2015 20:54:45</publishTime>
@@ -408,28 +408,28 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/Templates/rprDetalleDepreciacionNiic.htm">
-      <publishTime>10/23/2015 15:56:21</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rprDetalleDepreciacionTributaria.htm">
-      <publishTime>09/16/2015 15:27:30</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptAlta.htm">
-      <publishTime>09/15/2015 22:35:01</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptAsignacion.htm">
-      <publishTime>09/15/2015 22:31:42</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptBaja.htm">
-      <publishTime>08/31/2015 22:59:53</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptDetalle.htm">
-      <publishTime>07/27/2015 17:39:34</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptDetalleHistoricoDeterioro.htm">
-      <publishTime>07/27/2015 17:39:34</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptDetalleHistoricoResidual.htm">
-      <publishTime>07/27/2015 17:39:34</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/Templates/rptDetalleTrazabilidad.htm">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -450,13 +450,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/ValorResidual.aspx">
-      <publishTime>10/30/2015 08:55:55</publishTime>
+      <publishTime>06/04/2016 10:26:46</publishTime>
     </File>
     <File Include="Modulo/WebForm1.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/25/2015 15:26:42</publishTime>
+      <publishTime>06/04/2016 10:26:53</publishTime>
     </File>
     <File Include="PanelFast.aspx">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -465,7 +465,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/05/2015 11:20:42</publishTime>
+      <publishTime>06/08/2016 08:52:16</publishTime>
     </File>
   </ItemGroup>
 </Project>

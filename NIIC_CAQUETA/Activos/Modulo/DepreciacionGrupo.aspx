@@ -14,8 +14,8 @@
     <script src="JS/FileSaver.js"></script>
     <script src="JS/papaparse.js"></script>
     <link href="../Estilos/extjs-extension.css" rel="stylesheet" />
-    <script src="http://gascaqueta.net/sigcweb/scripts/extjs-extension.js">
-    </script>
+    <%--<script src="http://gascaqueta.net/sigcweb/scripts/extjs-extension.js">
+    </script>--%>
 
     <style type="text/css">
         /**/
@@ -86,7 +86,7 @@
     </script>
 </head>
 <body>
-    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Neptune" AjaxTimeout="560000000" />
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Neptune" AjaxTimeout="95000000" />
     <ext:TaskManager ID="TaskManager1" runat="server">
         <Tasks>
             <ext:Task

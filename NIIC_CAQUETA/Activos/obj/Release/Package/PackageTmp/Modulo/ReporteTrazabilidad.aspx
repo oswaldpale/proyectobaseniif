@@ -6,7 +6,7 @@
 <head runat="server">
     <script src="http://gascaqueta.net/sigcweb/scripts/extjs-extension.js">
     </script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <script type="text/javascript">
         var prepare = function (grid, command, record, row, col, value) {
@@ -21,9 +21,9 @@
     <title></title>
 </head>
 <body>
-   
-    <ext:ResourceManager ID="ResourceManager1" runat="server" ShowWarningOnAjaxFailure="true" Theme="Neptune"  />
-    
+
+    <ext:ResourceManager ID="ResourceManager1" runat="server" ShowWarningOnAjaxFailure="true" Theme="Neptune" />
+
     <form id="form1" runat="server">
         <ext:Hidden ID="Hidden1" runat="server" />
 
@@ -34,7 +34,7 @@
             </Model>
         </ext:Store>
 
-         <ext:Store ID="Store1" runat="server" PageSize="150">
+        <ext:Store ID="Store1" runat="server" PageSize="150">
             <Model>
                 <ext:Model ID="Model1" runat="server">
                 </ext:Model>
@@ -42,7 +42,7 @@
         </ext:Store>
 
 
-        <ext:Viewport ID="Viewport1" runat="server" >
+        <ext:Viewport ID="Viewport1" runat="server">
             <LayoutConfig>
                 <ext:VBoxLayoutConfig Align="Center" Pack="Center" />
             </LayoutConfig>
@@ -52,7 +52,7 @@
                     <FieldDefaults LabelAlign="Right" LabelWidth="115" MsgTarget="Side" />
                     <Items>
                         <ext:FieldSet ID="FieldSet1" runat="server" DefaultWidth="1250" Title="Filtros"
-                             Height="70">
+                            Height="70">
                             <Items>
                                 <ext:Container ID="Container2" runat="server" Layout="HBoxLayout">
                                     <Items>
@@ -131,11 +131,11 @@
                                                 </ext:Window>
                                             </Component>
                                         </ext:DropDownField>
-                                        <ext:ComboBox runat="server" ID="cbx_estado" Width="150" Margins="0 0 0 5" >
-                                          <Items>
-                                            <ext:ListItem Text="Inactivo" Value="I" />
-                                            <ext:ListItem Text="Activo" Value="A" />
-                                        </Items>
+                                        <ext:ComboBox runat="server" ID="cbx_estado" Width="150" Margins="0 0 0 5">
+                                            <Items>
+                                                <ext:ListItem Text="Inactivo" Value="I" />
+                                                <ext:ListItem Text="Activo" Value="A" />
+                                            </Items>
                                         </ext:ComboBox>
 
                                         <ext:Button runat="server" ID="btn_buscar" Width="100" Text="Buscar" Icon="Zoom" Margins="0 0 0 5">
@@ -154,11 +154,11 @@
                             </Items>
                         </ext:FieldSet>
 
-                        <ext:FieldSet ID="FieldSet2" runat="server" DefaultWidth="1260"  Height="450" Title="Activos Fijos" >
+                        <ext:FieldSet ID="FieldSet2" runat="server" DefaultWidth="1260" Height="450" Title="Activos Fijos">
                             <Items>
-                                <ext:Container ID="Container3" runat="server" >
+                                <ext:Container ID="Container3" runat="server">
                                     <Items>
-                                        <ext:GridPanel ID="GrillaActivos" runat="server"  Height="400" Border="true"  >
+                                        <ext:GridPanel ID="GrillaActivos" runat="server" Height="400" Border="true">
                                             <Store>
                                                 <ext:Store ID="store_reportes" runat="server">
                                                     <Model>
@@ -178,7 +178,7 @@
                                                                 <ext:ModelField Name="ajus_dep_acum" />
                                                                 <ext:ModelField Name="vr_Depreciacion" />
                                                                 <ext:ModelField Name="Importe_libros" />
-                                                                <ext:ModelField name="CodEmpleado" />
+                                                                <ext:ModelField Name="CodEmpleado" />
                                                                 <ext:ModelField Name="EstadoBaja" />
                                                                 <ext:ModelField Name="Estado" />
                                                             </Fields>
@@ -186,74 +186,73 @@
                                                     </Model>
                                                 </ext:Store>
                                             </Store>
-                                             <ColumnModel ID="ColumnModel1" runat="server">
-                                                                <Columns>
-                                                                    <ext:Column ID="Column1" runat="server" DataIndex="FechaEntrada" Header="Fecha Ingreso" Width="100">
-                                                                        <HeaderItems>
-                                                                            <ext:TextField ID="TextField1" runat="server" FieldCls="text-center">
-                                                                                <Listeners>
-                                                                                    <Change Handler="this.up('grid').applyFilter();" />
-                                                                                </Listeners>
-                                                                                <Plugins>
-                                                                                    <ext:ClearButton ID="ClearButton1" runat="server" />
-                                                                                </Plugins>
-                                                                            </ext:TextField>
-                                                                        </HeaderItems>
-                                                                    </ext:Column>
-                                                                      <ext:Column ID="Column2" runat="server" DataIndex="NControl" Header="N Control" Flex="1" Hidden="true" />
-                                                                    <ext:Column ID="Column6" runat="server" DataIndex="placa" Header="Placa" Width="90">
-                                                                        <HeaderItems>
-                                                                            <ext:TextField ID="TextField6" runat="server" FieldCls="text-center">
-                                                                                <Listeners>
-                                                                                    <Change Handler="this.up('grid').applyFilter();" />
-                                                                                </Listeners>
-                                                                                <Plugins>
-                                                                                    <ext:ClearButton ID="ClearButton6" runat="server" />
-                                                                                </Plugins>
-                                                                            </ext:TextField>
-                                                                        </HeaderItems>
-                                                                    </ext:Column>
-                                                                    <ext:Column ID="Column7" runat="server" DataIndex="Nombre" Header="Nombre" Flex="2" />
-                                                                    <ext:Column ID="Column8" runat="server" DataIndex="CostoInicial" Header="Costo Inicial" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                    <ext:Column ID="Column9" runat="server" DataIndex="vr_razonable" Header="Vr Revaluación" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                     <ext:Column ID="Column10" runat="server" DataIndex="vr_razonable" Header="Vr Deterioro" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                     <ext:Column ID="Column11" runat="server" DataIndex="vr_residual" Header="Vr Residual" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                    <ext:Column ID="Column12" runat="server" DataIndex="ajus_dep_acum" Header="Ajuste Dep Acum" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                     <ext:Column ID="Column13" runat="server" DataIndex="vr_Depreciacion" Header="Dep Acum" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                    <ext:Column ID="Column14" runat="server" DataIndex="Importe_libros" Header="Importe Libros" Width="110">
-                                                                       <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
-                                                                    </ext:Column>
-                                                                    <ext:Column ID="Column88" runat="server" Align="Center" Width="150">
-                                                                             <Commands>
-                                                                                 <ext:ImageCommand CommandName="btnDetalleDepreciacion" Icon="Report" ToolTip-Text="Reporte Depreciación">
+                                            <ColumnModel ID="ColumnModel1" runat="server">
+                                                <Columns>
+                                                    <ext:Column ID="Column1" runat="server" DataIndex="FechaEntrada" Header="Fecha Ingreso" Width="100">
+                                                        <HeaderItems>
+                                                            <ext:TextField ID="TextField1" runat="server" FieldCls="text-center">
+                                                                <Listeners>
+                                                                    <Change Handler="this.up('grid').applyFilter();" />
+                                                                </Listeners>
+                                                                <Plugins>
+                                                                    <ext:ClearButton ID="ClearButton1" runat="server" />
+                                                                </Plugins>
+                                                            </ext:TextField>
+                                                        </HeaderItems>
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column2" runat="server" DataIndex="NControl" Header="N Control" Flex="1" Hidden="true" />
+                                                    <ext:Column ID="Column6" runat="server" DataIndex="placa" Header="Placa" Width="90">
+                                                        <HeaderItems>
+                                                            <ext:TextField ID="TextField6" runat="server" FieldCls="text-center">
+                                                                <Listeners>
+                                                                    <Change Handler="this.up('grid').applyFilter();" />
+                                                                </Listeners>
+                                                                <Plugins>
+                                                                    <ext:ClearButton ID="ClearButton6" runat="server" />
+                                                                </Plugins>
+                                                            </ext:TextField>
+                                                        </HeaderItems>
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column7" runat="server" DataIndex="Nombre" Header="Nombre" Flex="2" />
+                                                    <ext:Column ID="Column8" runat="server" DataIndex="CostoInicial" Header="Costo Inicial" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column9" runat="server" DataIndex="vr_razonable" Header="Vr Revaluación" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column10" runat="server" DataIndex="vr_razonable" Header="Vr Deterioro" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column11" runat="server" DataIndex="vr_residual" Header="Vr Residual" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column12" runat="server" DataIndex="ajus_dep_acum" Header="Ajuste Dep Acum" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column13" runat="server" DataIndex="vr_Depreciacion" Header="Dep Acum" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column14" runat="server" DataIndex="Importe_libros" Header="Importe Libros" Width="110">
+                                                        <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
+                                                    </ext:Column>
+                                                    <ext:Column ID="Column88" runat="server" Align="Center" Width="150">
+                                                        <Commands>
+                                                            <ext:ImageCommand CommandName="btnDetalleDepreciacion" Icon="Report" ToolTip-Text="Reporte Depreciación">
+                                                            </ext:ImageCommand>
+                                                            <ext:ImageCommand CommandName="btnDetalleTrazabilidad" Icon="Report" ToolTip-Text="Reporte Trazabilidad" />
+                                                        </Commands>
+                                                        <PrepareCommand Fn="prepare" />
 
-                                                                                 </ext:ImageCommand>
-                                                                                   <ext:ImageCommand CommandName="btnDetalleTrazabilidad" Icon="Report" ToolTip-Text="Reporte Trazabilidad" />
-                                                                             </Commands>
-                                                                              <PrepareCommand Fn="prepare" />
+                                                        <Listeners>
 
-                                                                             <Listeners>
-
-                                                                                 <Command Handler="if(command=='btnDetalleDepreciacion'){ 
+                                                            <Command Handler="if(command=='btnDetalleDepreciacion'){ 
                                                                                                       App.direct.TrazabilidadNormaInternacional(record.data['idActivo'],record.data['placa'],record.data['Nombre']);}
-                                                                                 "/>
-                                                                             </Listeners>
-                                                                 </ext:Column>
+                                                                                 " />
+                                                        </Listeners>
+                                                    </ext:Column>
 
-                                                                </Columns>
-                                             </ColumnModel>
+                                                </Columns>
+                                            </ColumnModel>
                                             <SelectionModel>
                                                 <ext:RowSelectionModel ID="RowSelectionModel2" runat="server" Mode="Single" />
                                             </SelectionModel>
@@ -269,7 +268,7 @@
                     <FooterBar>
                         <ext:Toolbar runat="server" ID="asdas">
                             <Items>
-                             <%--   <ext:Button runat="server" ID="btn_exportar" Text="EXPORTAR" Icon="PageExcel" Scale="Small"
+                                <%--   <ext:Button runat="server" ID="btn_exportar" Text="EXPORTAR" Icon="PageExcel" Scale="Small"
                                     Hidden="false" Disabled="true" OnClick="ToExcel2" AutoPostBack="true">
                                    
                                 </ext:Button>--%>
@@ -342,7 +341,7 @@
                 </ext:Store>
             </Store>
         </ext:ComboBox>
-           
+
     </form>
 </body>
 

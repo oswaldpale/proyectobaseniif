@@ -287,17 +287,6 @@ namespace Activos.Modulo
         public void FechaUDepreciacionMinima()
         {
             Conexion_Mysql conexion = new Conexion_Mysql();
-            //string FechaRegistroUDocumento = conexion.EjecutarSelectMysql(
-            //                                  "SELECT "
-            //                                  + "    Date_format(MIN(a.Fecha_Udepreciacion),'%d-%m-%Y') AS FechaUltimoDoc "
-            //                                  + "FROM "
-            //                                  + "    activo a "
-            //                                  + "WHERE "
-            //                                  + "    a.Estado='A' "
-            //                                  + "AND a.id_empleado IS NOT NULL "
-            //                                  + "AND a.Fecha_Udepreciacion IS NOT NULL "
-            //                                  + "AND a.Fecha_Baja IS NULL"
-            //                                  ).Tables[0].Rows[0]["FechaUltimoDoc"].ToString();
 
             string FechaRegistroUDocumento = doc.ConsultarFechaDepreciacionMin(); 
 
@@ -410,7 +399,7 @@ namespace Activos.Modulo
             }
             else
             {
-                store_listaActivos.DataSource = ConsultarLimiteActivos("LIMIT 2000"); ;
+                store_listaActivos.DataSource = ConsultarLimiteActivos("LIMIT 100"); ;
                 store_listaActivos.DataBind();
             }
 
@@ -504,33 +493,6 @@ namespace Activos.Modulo
             }
         }
 
-        protected void ToExcel1(object sender, EventArgs e)
-        {
-
-            List<Activo> ListaActivos = (List<Activo>)Session["ListaActivos"];
-
-         
-
-            string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
-            int Codigo = doc.AutoGeneradorID(8);
-            string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
-            string Rcontrol = "DP00" + Codigo;
-            Excelparte(jsonn1, "parte1");
-
-        }
-        protected void ToExcel2(object sender, EventArgs e)
-        {
-            List<Activo> ListaActivos = (List<Activo>)Session["ListaActivos"];
-            
-                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte2"));
-                int Codigo = doc.AutoGeneradorID(8);
-                string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
-                string Rcontrol = "DP00" + Codigo;
-                Excelparte(jsonn1, "parte2");
-            
-        }
-
-        
 
         public void Excelparte(string json, string parte)
         {
@@ -544,21 +506,6 @@ namespace Activos.Modulo
 
                 X.AddScript("descargaCSV('Planos/prueba.txt');");
 
-
-
-                //int Codigo = doc.AutoGeneradorID(8);
-                //string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
-                //string Rcontrol = "DP00" + Codigo;
-                //string DepMesPrevisualizador = "DEPRECIACIACION " + "(" + Rcontrol + ")" + fechaRevision + " " + parte;
-                //StoreSubmitDataEventArgs eSubmit = new StoreSubmitDataEventArgs(json, null);
-                //XmlNode xml = eSubmit.Xml;
-                //this.Response.Clear();
-                //this.Response.ContentType = "application/vnd.ms-excel";
-                //this.Response.AddHeader("Content-Disposition", "attachment; filename=" + DepMesPrevisualizador + ".xls");
-                //XslCompiledTransform xtExcel = new XslCompiledTransform();
-                //xtExcel.Load(Server.MapPath("Excel.xsl"));
-                //xtExcel.Transform(xml, null, this.Response.OutputStream);
-                //this.Response.End();
             }
             catch (Exception e)
             {
@@ -680,104 +627,9 @@ namespace Activos.Modulo
             }
 
         }
-        /// <summary>
-        /// metodo inicializa la barra de progreso e inicia proceso de depreciacion.
-        /// </summary>
-        /// <param name="state"></param>
-        private void ProcesarEjecucion(object state)
-        {
-            Session["estadoProcDe"] = "false";
-            int posicion = 0;
-            ListaActivos = (List<Activo>)Session["ListaActivos"];
-            int cant = ListaActivos.Count;
-            string est = estadoPlano.Text;
-            string fechaRegistro = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
+        
 
-            try
-            {
-                var count = ListaActivos
-                    .Where(x => Convert.ToDateTime(fechaRegistro) > Convert.ToDateTime(x.Fecha_Udepreciacion))
-                    .Count();
-                datosDepreciacion = (List<AtributosDepreciacion>)Session["datosDepreciacion"];
-
-                if (est == "true")
-                {
-                    foreach (Activo activo in ListaActivos)
-                    {
-
-                        List<AtributosDepreciacion> FiltroDepActivo = datosDepreciacion.Where(item => item.IdActivo == activo.idactivo).ToList();
-                        int cantFiltro = FiltroDepActivo.Count;
-                        activo.Componente = new List<ActivoComponente>();
-                        foreach (AtributosDepreciacion Componente in FiltroDepActivo)
-                        {
-                            activo.Componente.Add(ProDepPlano(Componente, activo.Fecha_Udepreciacion, fechaRegistro));
-                        }
-
-                        activo.dep_mes = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_mes);
-                        activo.VrDepreciacion = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_acumulada);
-
-                        activo.Fecha_Revision = fechaRegistro;
-
-                        activo.baseDepreciable = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.base_deprec);
-                        activo.Importe_libros = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_importe_libros);
-
-                        posicion = posicion + 1;
-                        // Thread.Sleep(1);
-                        this.Session["LongActionProgress"] = posicion;
-                    }
-                    Session.Remove("ListaActivos");
-                    Session["ListaActivos"] = ListaActivos;
-                    Session["estadoProcDe"] = "true";
-                }
-                else
-                {
-
-                    foreach (Activo activo in ListaActivos)
-                    {
-                        activo.Componente = new List<ActivoComponente>();
-
-                        foreach (ActivoComponente Componente in ProDepFecha(activo.idactivo, activo.Fecha_Udepreciacion, fechaRegistro))
-                        {
-                            activo.Componente.Add(Componente);
-                        }
-
-
-                        var FiltroNorma = activo.Componente.Where(item => item.id_activo == activo.idactivo);
-                        activo.dep_mes = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_mes);
-                        activo.VrDepreciacion = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_acumulada);
-                        activo.baseDepreciable = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.base_deprec);
-                        activo.Importe_libros = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_importe_libros);
-                        activo.Fecha_Revision = fechaRegistro;
-                        posicion = posicion + 1;
-
-                        this.Session["LongActionProgress"] = posicion;
-
-                    }
-                    Session.Remove("ListaActivos");
-                    Session["ListaActivos"] = ListaActivos;
-                    Session["estadoProcDe"] = "true";
-                }
-
-               
-
-                this.Session.Remove("LongActionProgress");
-
-            }
-            catch (Exception exc)
-            {
-
-                X.MessageBox.Show(new MessageBoxConfig
-                {
-                    Title = "Sigc. #_Error.",
-                    Message = "Error: " + exc.Message + exc.StackTrace,
-                    Buttons = MessageBox.Button.OK,
-                    Icon = MessageBox.Icon.ERROR,
-                    Closable = false
-                });
-            }
-
-
-        }
+      
         /// <summary>
         /// Calcula la depreciacion todos los activos por linea recta Tomando Fecha Referencia La fechaRevision(Formulario)
         /// </summary>
@@ -843,11 +695,13 @@ namespace Activos.Modulo
                 Comp.ajust_vr_razonable = Convert.ToDouble(row["ajus_vr_razonable"].ToString());
                 Comp.vr_importe_libros = Convert.ToDouble(row["vr_importe_libros"].ToString());
                 Comp.vr_dep_acumulada = Convert.ToDouble(row["vr_dep_acumulada"].ToString());
+                Comp.vr_dep_acumulada_old = Convert.ToDouble(row["vr_dep_acumulada"].ToString());
                 Comp.nombre_depreciacion = row["Depreciacion"].ToString();
                 Comp.nombre_componente = row["Componente"].ToString();
                 Comp.idtiponorma = row["idtiponorma"].ToString();
                 Comp.NombreNorma = row["Norma"].ToString();
                 Comp.base_deprec = Convert.ToInt32(row["base_deprec"].ToString());
+                Comp.base_deprec_old = Convert.ToInt32(row["base_deprec"].ToString());
                 Comp.cantidadDias = CalcularDias(fanteriorD, fechaRevision);
                 Comp.unidad_dep = Math.Truncate((Convert.ToDouble(CalcularDias(fanteriorD, fechaRevision)) / 30) * 100) / 100;
 
@@ -937,9 +791,11 @@ namespace Activos.Modulo
             Comp.vida_util_temp = Convert.ToDouble(dt.Tables[0].Rows[0]["vida_util_temp"].ToString());
             Comp.vr_importe_libros = Convert.ToDouble(dt.Tables[0].Rows[0]["vr_importe_libros"].ToString());
             Comp.vr_dep_acumulada = Convert.ToDouble(dt.Tables[0].Rows[0]["vr_dep_acumulada"].ToString());
+            Comp.vr_dep_acumulada_old = Convert.ToDouble(dt.Tables[0].Rows[0]["vr_dep_acumulada"].ToString());
             Comp.tipodepreciacion = Convert.ToInt16(dt.Tables[0].Rows[0]["id_tipo_depreciacion"].ToString());
             Comp.id_tipodepreciacion = dt.Tables[0].Rows[0]["id_tipo_depreciacion"].ToString();
             Comp.base_deprec = Convert.ToInt32(dt.Tables[0].Rows[0]["base_deprec"].ToString());
+            Comp.base_deprec_old = Convert.ToInt32(dt.Tables[0].Rows[0]["base_deprec"].ToString());
 
             Comp.idtiponorma = dt.Tables[0].Rows[0]["idtiponorma"].ToString();
             Comp.NombreNorma = dt.Tables[0].Rows[0]["Norma"].ToString();
@@ -1065,17 +921,18 @@ namespace Activos.Modulo
 
         }
 
-        [DirectMethod(ShowMask = true, Msg = "Grabando...", Target = MaskTarget.Page)]
+        [DirectMethod(ShowMask = true, Msg = "Grabando...", Timeout =900000000 )]
         public void grabarDepreciacion()
         {
-            try
-            {
+            //try
+            //{
                 List<string> sql = new List<string>();
                 string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
                 if (Session["ListaActivos"] != null)
                 {
                     Conexion_Mysql conexion = new Conexion_Mysql();
-                    string est = estadoProcDe.Text;
+                conexion.Tiempo = " ; default command timeout=990";
+                string est = estadoProcDe.Text;
                     // Genero una copia antes de iniciar la grabación de la primera depreciaciación en el sistema
                     // Motivo:Si se requiera restaurar los datos de los activos a su estado Inicial. 
                     if (doc.ConsultarExistenciaDepreciacion() == 0)
@@ -1131,8 +988,11 @@ namespace Activos.Modulo
                            
                         }
                         sql.Add("update registro_control set Numero=" + (Codigo + 1) + " where Codigo=8");
+
+
                         this.Session.Remove("estadoProcDe");
                         this.Session.Remove("ListaActivos");
+
                         if (conexion.EjecutarTransaccion(sql))
                         {
                             X.Msg.Info(new InfoPanel
@@ -1186,9 +1046,107 @@ namespace Activos.Modulo
                     }).Show();
                 }
 
+            //}
+            //catch (Exception exc)
+            //{
+            //    X.MessageBox.Show(new MessageBoxConfig
+            //    {
+            //        Title = "Sigc. #_Error.",
+            //        Message = "Error: " + exc.Message + exc.StackTrace,
+            //        Buttons = MessageBox.Button.OK,
+            //        Icon = MessageBox.Icon.ERROR,
+            //        Closable = false
+            //    });
+            //}
+        }
+
+        /// <summary>
+        /// metodo inicializa la barra de progreso e inicia proceso de depreciacion.
+        /// </summary>
+        /// <param name="state"></param>
+        private void ProcesarEjecucion(object state)
+        {
+            Session["estadoProcDe"] = "false";
+            int posicion = 0;
+            ListaActivos = (List<Activo>)Session["ListaActivos"];
+            int cant = ListaActivos.Count;
+            string est = estadoPlano.Text;
+            string fechaRegistro = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
+
+            try
+            {
+                var count = ListaActivos
+                    .Where(x => Convert.ToDateTime(fechaRegistro) > Convert.ToDateTime(x.Fecha_Udepreciacion))
+                    .Count();
+                datosDepreciacion = (List<AtributosDepreciacion>)Session["datosDepreciacion"];
+
+                if (est == "true")
+                {
+                    foreach (Activo activo in ListaActivos)
+                    {
+
+                        List<AtributosDepreciacion> FiltroDepActivo = datosDepreciacion.Where(item => item.IdActivo == activo.idactivo).ToList();
+                        int cantFiltro = FiltroDepActivo.Count;
+                        activo.Componente = new List<ActivoComponente>();
+                        foreach (AtributosDepreciacion Componente in FiltroDepActivo)
+                        {
+                            activo.Componente.Add(ProDepPlano(Componente, activo.Fecha_Udepreciacion, fechaRegistro));
+                        }
+
+                        activo.dep_mes = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_mes);
+                        activo.VrDepreciacion = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_acumulada);
+
+                        activo.Fecha_Revision = fechaRegistro;
+
+                        activo.baseDepreciable = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.base_deprec);
+                        activo.Importe_libros = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_importe_libros);
+
+                        posicion = posicion + 1;
+                       
+
+                        // Thread.Sleep(1);
+                        this.Session["LongActionProgress"] = posicion;
+                    }
+                    TempDep(ListaActivos);
+                    Session["estadoProcDe"] = "true";
+                }
+                else
+                {
+
+                    foreach (Activo activo in ListaActivos)
+                    {
+                        activo.Componente = new List<ActivoComponente>();
+
+                        foreach (ActivoComponente Componente in ProDepFecha(activo.idactivo, activo.Fecha_Udepreciacion, fechaRegistro))
+                        {
+                            activo.Componente.Add(Componente);
+                        }
+
+
+                        var FiltroNorma = activo.Componente.Where(item => item.id_activo == activo.idactivo);
+                        activo.dep_mes = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_mes);
+                        activo.VrDepreciacion = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_dep_acumulada);
+                        activo.baseDepreciable = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.base_deprec);
+                        activo.Importe_libros = FiltroNorma.Where(item => item.idtiponorma == "1").Sum(y => y.vr_importe_libros);
+                        activo.Fecha_Revision = fechaRegistro;
+                        posicion = posicion + 1;
+
+                        this.Session["LongActionProgress"] = posicion;
+
+                    }
+                    Session.Remove("ListaActivos");
+                    Session["ListaActivos"] = ListaActivos;
+                    Session["estadoProcDe"] = "true";
+                }
+
+
+
+                this.Session.Remove("LongActionProgress");
+
             }
             catch (Exception exc)
             {
+
                 X.MessageBox.Show(new MessageBoxConfig
                 {
                     Title = "Sigc. #_Error.",
@@ -1198,7 +1156,60 @@ namespace Activos.Modulo
                     Closable = false
                 });
             }
+
+
         }
+        #region PLANOS
+
+        /// <summary>
+        /// Guarda temporalmente los datos de la depreciacion.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="parte"></param>
+        public void TempDep(List<Activo> ListaActivos)
+        {
+            try
+            {
+                string jsonn1 = JsonConvert.SerializeObject(ListaActivos);
+                string id_file = "_tempDep.json";
+                string FilePath = HttpRuntime.AppDomainAppPath + @"TempDep\" + id_file;
+                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
+                StreamWriter plano = new StreamWriter(FilePath);
+                plano.WriteLine(json1);
+                plano.Close();
+
+            }
+            catch (Exception e)
+            {
+                this.Response.End();
+            }
+        }
+        [DirectMethod(Msg = "Cargando...", ShowMask = true, Target = MaskTarget.CustomTarget)]
+        public void Excel()
+        {
+
+            try
+            {
+                List<Activo> ListaActivos = (List<Activo>)Session["ListaActivos"];
+                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
+                ListaActivos = null;
+                string id_file = "prueba.txt";
+                string FilePath = HttpRuntime.AppDomainAppPath + @"Planos\" + id_file;
+                StreamWriter plano = new StreamWriter(FilePath);
+                plano.WriteLine(jsonn1);
+                plano.Close();
+                Thread.Sleep(5000);
+                X.AddScript("descargaCSV('../Planos/prueba.txt');");
+            }
+            catch (Exception)
+            {
+
+                Response.End();
+            }
+
+        }
+        #endregion
+
 
         [DirectMethod]
         public void cargarDatosDepreciacion(int idactivo)
@@ -1288,28 +1299,6 @@ namespace Activos.Modulo
         //}
         #endregion
 
-        [DirectMethod(Msg = "Cargando...", ShowMask = true, Target = MaskTarget.CustomTarget)]
-        public void Excel()
-        {
-
-            try
-            {
-                List<Activo> ListaActivos = (List<Activo>)Session["ListaActivos"];
-                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
-                string id_file = "prueba.txt";
-                string FilePath = HttpRuntime.AppDomainAppPath + @"Planos\" + id_file;
-                StreamWriter plano = new StreamWriter(FilePath);
-                plano.WriteLine(jsonn1);
-                plano.Close();
-
-                X.AddScript("descargaCSV('../Planos/prueba.txt');");
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-               
-        }
+      
     }
 }
