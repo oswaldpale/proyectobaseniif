@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Activos.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,8 @@ namespace Activos
         public static Boolean Combus = false;
         public static string Empresa = "GAS CAQUETA S.A.";
         public static string Nit = "828000499";
+        public static List<Activo> listDep = new List<Activo>();
+        public static List<string> sqldep = new List<string>();
 
         /**/
         public static String path2 = "";

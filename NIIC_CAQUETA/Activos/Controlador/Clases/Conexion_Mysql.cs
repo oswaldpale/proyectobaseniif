@@ -160,8 +160,8 @@ namespace Activos.Clases
             MySqlTransaction transa = mySqlConnection.BeginTransaction();
             MySqlCommand mySqlCommand;
 
-            //try
-            //{
+            try
+            {
                 for (int i = 0; i < Sentencia.Count; i++)
                 {
                     if (Sentencia[i].Length > 0)
@@ -172,19 +172,55 @@ namespace Activos.Clases
                     }
                 }
                 transa.Commit();
+                Console.Write("finalizado......");
                 return true;
             }
-            //catch (Exception exc)
-            //{
-            //    transa.Rollback();
-            //    return false;
-            //    throw new Exception("No se realizó ninguna operación en la Base de Datos."+ exc);
-                
-            //}
-            //finally
-            //{
-            //    mySqlConnection.Close();
-            //}
-        //}
+            catch (Exception exc)
+            {
+                transa.Rollback();
+              
+                throw new Exception("No se realizó ninguna operación en la Base de Datos." + exc);
+                return false;
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
+        }
+
+        public void EjecutarTransaccion1(List<string> Sentencia,System.Web.SessionState.HttpSessionState Session)
+        {
+            MySqlConnection mySqlConnection = ConectarMysql();
+            MySqlTransaction transa = mySqlConnection.BeginTransaction();
+            MySqlCommand mySqlCommand;
+
+            try
+            {
+                for (int i = 0; i < Sentencia.Count; i++)
+                {
+                    if (Sentencia[i].Length > 0)
+                    {
+                        mySqlCommand = new MySqlCommand(Sentencia[i], mySqlConnection);
+                        Session["LongActionProgress"] = i;
+                        mySqlCommand.Transaction = transa;
+                        mySqlCommand.ExecuteNonQuery();
+                    }
+                }
+                transa.Commit();
+                Console.Write("finalizado......");
+
+            }
+            catch (Exception exc)
+            {
+                transa.Rollback();
+
+                throw new Exception("No se realizó ninguna operación en la Base de Datos." + exc);
+
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
+        }
     }
 }

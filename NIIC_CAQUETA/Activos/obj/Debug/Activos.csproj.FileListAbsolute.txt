@@ -178,6 +178,5 @@ C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin
 C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Ext.Net.Utilities.xml
 C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Newtonsoft.Json.xml
 C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\bin\Transformer.NET.xml
-C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.csprojResolveAssemblyReference.cache
 C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.dll
 C:\Users\Usuario TI\Documents\Proyecto\proyectobaseniif\NIIC_CAQUETA\Activos\obj\Debug\Activos.pdb

@@ -11,7 +11,6 @@ using System.Web.UI.WebControls;
 using System.Threading;
 using System.Xml;
 using System.Xml.Xsl;
-
 using Newtonsoft.Json;
 
 
@@ -288,7 +287,7 @@ namespace Activos.Modulo
         {
             Conexion_Mysql conexion = new Conexion_Mysql();
 
-            string FechaRegistroUDocumento = doc.ConsultarFechaDepreciacionMin(); 
+            string FechaRegistroUDocumento = doc.ConsultarFechaDepreciacionMin();
 
             if (FechaRegistroUDocumento != "")
             {
@@ -627,9 +626,9 @@ namespace Activos.Modulo
             }
 
         }
-        
 
-      
+
+
         /// <summary>
         /// Calcula la depreciacion todos los activos por linea recta Tomando Fecha Referencia La fechaRevision(Formulario)
         /// </summary>
@@ -921,143 +920,284 @@ namespace Activos.Modulo
 
         }
 
-        [DirectMethod(ShowMask = true, Msg = "Grabando...", Timeout =900000000 )]
-        public void grabarDepreciacion()
+        //[DirectMethod(ShowMask = true, Msg = "Grabando...")]
+        //public void grabarDepreciacion()
+        //{
+        //    //try
+        //    //{
+        //    List<string> sql = new List<string>();
+        //    string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
+        //    //if (Session["ListaActivos"] != null)
+        //    //{
+        //    Conexion_Mysql conexion = new Conexion_Mysql();
+        //    conexion.Tiempo = " ; default command timeout=990";
+        //    string est = estadoProcDe.Text;
+        //    // Genero una copia antes de iniciar la grabación de la primera depreciaciación en el sistema
+        //    // Motivo:Si se requiera restaurar los datos de los activos a su estado Inicial. 
+        //    if (doc.ConsultarExistenciaDepreciacion() == 0)
+        //    {
+        //        sql = doc.InsertDepreciacionInicial(fechaRevision);
+        //    }
+
+        //    int Codigo = doc.AutoGeneradorID(8);
+        //    string Rcontrol = "DP00" + Codigo;
+        //    if (Session["estadoProcDe"].ToString() == "true")
+        //    {
+        //        sql.Add(doc.InsertarDocumentoDepreciacion(Rcontrol, "Depreciacion", fechaRevision));
+        //        string etapaguardar = HTIPOGUARDAR.Text;
+        //        List<Activo> FiltroActivo = null;
+        //        if (etapaguardar == "1")
+        //        {
+        //            FiltroActivo = Global.listDep.Where(item => item.idsubclase == etapaguardar).ToList();
+        //        }
+        //        else
+        //        {
+        //            FiltroActivo = Global.listDep.Where(item => item.idsubclase != etapaguardar).ToList();
+        //        }
+        //        foreach (Activo act in Global.listDep)
+        //        {
+
+        //            sql.Add(string.Format("INSERT INTO depreciacion(idactivo,responsable,vr_residual,vr_deterioro,vr_razonable,vr_depreciacion,ImporteLibros,dep_mes,fecha,login,FyH_Real,IDcontrol,baseDepreciable,IdGrupoAsignacionCentroCosto) "
+        //                                                 + " SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',now(),'{10}','{11}', "
+        //                                                   + " (SELECT a.IdgrupoAsignacionCentro from activos_fijos.asignacionactivo a WHERE a.idactivo ='" + act.idactivo + "' AND a.estado='A')",
+        //                                                 act.idactivo, act.idresponsable, act.VrResidual.ToString().Replace(',', '.'), act.VrDeterioro.ToString().Replace(',', '.'), act.VrRazonable.ToString().Replace(',', '.'),
+        //                                                 act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), fechaRevision,
+        //                                                 HttpContext.Current.User.Identity.Name.ToUpper(), Rcontrol, act.baseDepreciable.ToString().Replace(',', '.')));
+
+        //            sql.Add(string.Format("UPDATE activo SET Fecha_Udepreciacion='{0}',vr_Depreciacion = '{1}',"
+        //                                  + "Importe_libros = '{2}',vr_dep_mes = '{3}',BaseDepreciable='{4}'  "
+        //                                  + " WHERE idactivo= '{5}'",
+        //                                  fechaRevision, act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), act.baseDepreciable.ToString().Replace(',', '.'), act.idactivo));
+
+        //            foreach (ActivoComponente com in act.Componente)
+        //            {
+        //                sql.Add(string.Format("INSERT INTO detalle_depreciacion(id_depreciacion,id_componente,depreciacion_mes,"
+        //                    + " baseDepreciable,ImporteLibros,dep_acum,unidad_dep,vr_residual,ajust_dep_acum,ajust_vr_razonable, "
+        //                    + " vr_deterioro,costo_inicial,idnorma,Fecha,FyH_Real,login,idtipodepreciacion,reexpresionVidaUtil,idactivo,vida_remanente,vida_utilizada,vidaUtil) "
+        //                    + "SELECT "
+        //                            + "(SELECT max(id_depreciacion) FROM depreciacion), "
+        //                            + "'{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',"
+        //                            + "'{10}','{11}','{12}',now(),'{13}','{14}','{15}','{16}','{17}','{18}','{19}' ",
+        //                            com.id_componente, com.vr_dep_mes.ToString().Replace(',', '.'), com.base_deprec.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
+        //                            com.vr_dep_acumulada.ToString().Replace(',', '.'), com.unidad_dep.ToString().Replace(',', '.'), com.ajust_vr_residual.ToString().Replace(',', '.'), com.vr_dep_acumulada.ToString().Replace(',', '.'),
+        //                            com.ajust_vr_razonable.ToString().Replace(',', '.'), com.ajust_vr_deterioro.ToString().Replace(',', '.'), com.costo_inicial.ToString().Replace(',', '.'), com.idtiponorma, act.Fecha_Revision, HttpContext.Current.User.Identity.Name.ToUpper(), com.id_tipodepreciacion, com.ajusteVidaUtil.ToString().Replace(',', '.'), com.id_activo, com.vida_util_remanente.ToString().Replace(',', '.'), com.vida_util_utilizado.ToString().Replace(',', '.'), com.vida_util));
+
+        //                sql.Add(string.Format("UPDATE activo_componente SET vr_dep_acumulada= '{0}',vr_importe_libros= '{1}',"
+        //                                     + " vida_util_utilizado='{2}', "
+        //                                     + "vida_util_remanente='{3}',base_deprec='{4}', vr_dep_mes='{5}' "
+        //                                     + " WHERE id_Componente = '{6}'",
+        //                                     com.vr_dep_acumulada.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
+        //                                     com.vida_util_utilizado.ToString().Replace(',', '.'),
+        //                                     com.vida_util_remanente.ToString().Replace(',', '.'),
+        //                                     com.base_deprec.ToString().Replace(',', '.'), com.vr_dep_mes.ToString().Replace(',', '.'), com.id_componente));
+        //            }
+
+        //        }
+        //           sql.Add("update registro_control set Numero=" + (Codigo + 1) + " where Codigo=8");
+        //        this.Session.Remove("estadoProcDe");
+        //        //this.Session.Remove("ListaActivos");
+
+        //        if (conexion.EjecutarTransaccion(sql))
+        //        {
+
+        //            if (etapaguardar == "1")
+        //            {
+        //                HTIPOGUARDAR.Text = "2";
+        //                btnGrabar.Enable();
+        //            }
+        //            else
+        //            {
+        //                BGUARDARFALT.Enable();
+        //                Global.listDep = null;
+        //            }
+
+
+        //            X.Msg.Info(new InfoPanel
+        //            {
+        //                Title = "Notificación",
+        //                Icon = Icon.Accept,
+        //                Html = "Registros Grabados.",
+        //                HideDelay = 1500,
+
+        //            }).Show();
+        //        }
+        //        else
+        //        {
+        //            X.Msg.Info(new InfoPanel
+        //            {
+        //                Title = "Notificación",
+        //                Icon = Icon.Accept,
+        //                Html = "Error al guardar.",
+        //                HideDelay = 1500,
+
+        //            }).Show();
+        //        }
+
+        //        btnCargarPlano.Disabled = true;
+        //        btn_procesar.Disabled = true;
+        //        //btnGrabar.Disabled = true;
+        //        cargarGrillaActivos();
+        //        FechaUDepreciacionMinima();
+        //        Progress1.UpdateProgress(0, "    ");
+
+
+
+        //    }
+        //    else
+        //    {
+        //        X.Msg.Info(new InfoPanel
+        //        {
+        //            Title = "DEPRECIACION NO REALIZADA",
+        //            Icon = Icon.Exclamation,
+        //            Html = "DEBE REALIZAR EL PROCESO DE DEPRECIACION ANTES."
+        //        }).Show();
+        //    }
+        //    //}
+        //    //else
+        //    //{
+        //    //    X.Msg.Info(new InfoPanel
+        //    //    {
+        //    //        Title = "CARGA DE ACTIVOS ERRONEA",
+        //    //        Icon = Icon.Exclamation,
+        //    //        Html = "VUELVE A CARGAR LOS ACTIVOS"
+        //    //    }).Show();
+        //    //}
+
+        //    //}
+        //    //catch (Exception exc)
+        //    //{
+        //    //    X.MessageBox.Show(new MessageBoxConfig
+        //    //    {
+        //    //        Title = "Sigc. #_Error.",
+        //    //        Message = "Error: " + exc.Message + exc.StackTrace,
+        //    //        Buttons = MessageBox.Button.OK,
+        //    //        Icon = MessageBox.Icon.ERROR,
+        //    //        Closable = false
+        //    //    });
+        //    //}
+        //}
+
+
+
+        protected void IniciarProcesoGuardar(object sender, DirectEventArgs e)
         {
-            //try
-            //{
-                List<string> sql = new List<string>();
-                string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
-                if (Session["ListaActivos"] != null)
-                {
-                    Conexion_Mysql conexion = new Conexion_Mysql();
+
+                formarSql();
+                Conexion_Mysql conexion = new Conexion_Mysql();
                 conexion.Tiempo = " ; default command timeout=990";
-                string est = estadoProcDe.Text;
-                    // Genero una copia antes de iniciar la grabación de la primera depreciaciación en el sistema
-                    // Motivo:Si se requiera restaurar los datos de los activos a su estado Inicial. 
-                    if (doc.ConsultarExistenciaDepreciacion() == 0)
-                    {
-                        sql = doc.InsertDepreciacionInicial(fechaRevision);
-                    }
+                cantPlano.Text = Global.sqldep.Count.ToString();
 
-                    int Codigo = doc.AutoGeneradorID(8);
-                    string Rcontrol = "DP00" + Codigo;
-                    if (Session["estadoProcDe"].ToString() == "true")
-                    {
-
-                        ListaActivos = (List<Activo>)Session["ListaActivos"];
-                        sql.Add(doc.InsertarDocumentoDepreciacion(Rcontrol, "Depreciacion", fechaRevision));
-                        foreach (Activo act in ListaActivos)
-                        {
-                            
-
-                            sql.Add(string.Format("INSERT INTO depreciacion(idactivo,responsable,vr_residual,vr_deterioro,vr_razonable,vr_depreciacion,ImporteLibros,dep_mes,fecha,login,FyH_Real,IDcontrol,baseDepreciable,IdGrupoAsignacionCentroCosto) "
-                                                                 + " SELECT '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',now(),'{10}','{11}', "
-                                                                   + " (SELECT a.IdgrupoAsignacionCentro from activos_fijos.asignacionactivo a WHERE a.idactivo ='" + act.idactivo + "' AND a.estado='A')",
-                                                                 act.idactivo, act.idresponsable, act.VrResidual.ToString().Replace(',', '.'), act.VrDeterioro.ToString().Replace(',', '.'), act.VrRazonable.ToString().Replace(',', '.'),
-                                                                 act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), fechaRevision,
-                                                                 HttpContext.Current.User.Identity.Name.ToUpper(), Rcontrol, act.baseDepreciable.ToString().Replace(',', '.')));
-
-                            sql.Add(string.Format("UPDATE activo SET Fecha_Udepreciacion='{0}',vr_Depreciacion = '{1}',"
-                                                  + "Importe_libros = '{2}',vr_dep_mes = '{3}',BaseDepreciable='{4}'  "
-                                                  + " WHERE idactivo= '{5}'",
-                                                  fechaRevision, act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), act.baseDepreciable.ToString().Replace(',', '.'), act.idactivo));
-
-                            foreach (ActivoComponente com in act.Componente)
-                            {
-                                sql.Add(string.Format("INSERT INTO detalle_depreciacion(id_depreciacion,id_componente,depreciacion_mes,"
-                                    + " baseDepreciable,ImporteLibros,dep_acum,unidad_dep,vr_residual,ajust_dep_acum,ajust_vr_razonable, "
-                                    + " vr_deterioro,costo_inicial,idnorma,Fecha,FyH_Real,login,idtipodepreciacion,reexpresionVidaUtil,idactivo,vida_remanente,vida_utilizada,vidaUtil) "
-                                    + "SELECT "
-                                            + "(SELECT max(id_depreciacion) FROM depreciacion), "
-                                            + "'{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',"
-                                            + "'{10}','{11}','{12}',now(),'{13}','{14}','{15}','{16}','{17}','{18}','{19}' ",
-                                            com.id_componente, com.vr_dep_mes.ToString().Replace(',', '.'), com.base_deprec.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
-                                            com.vr_dep_acumulada.ToString().Replace(',', '.'), com.unidad_dep.ToString().Replace(',', '.'), com.ajust_vr_residual.ToString().Replace(',', '.'), com.vr_dep_acumulada.ToString().Replace(',', '.'),
-                                            com.ajust_vr_razonable.ToString().Replace(',', '.'), com.ajust_vr_deterioro.ToString().Replace(',', '.'), com.costo_inicial.ToString().Replace(',', '.'), com.idtiponorma, act.Fecha_Revision, HttpContext.Current.User.Identity.Name.ToUpper(), com.id_tipodepreciacion, com.ajusteVidaUtil.ToString().Replace(',', '.'), com.id_activo, com.vida_util_remanente.ToString().Replace(',', '.'), com.vida_util_utilizado.ToString().Replace(',', '.'), com.vida_util));
-
-                                sql.Add(string.Format("UPDATE activo_componente SET vr_dep_acumulada= '{0}',vr_importe_libros= '{1}',"
-                                                     + " vida_util_utilizado='{2}', "
-                                                     + "vida_util_remanente='{3}',base_deprec='{4}', vr_dep_mes='{5}' "
-                                                     + " WHERE id_Componente = '{6}'",
-                                                     com.vr_dep_acumulada.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
-                                                     com.vida_util_utilizado.ToString().Replace(',', '.'),
-                                                     com.vida_util_remanente.ToString().Replace(',', '.'),
-                                                     com.base_deprec.ToString().Replace(',', '.'), com.vr_dep_mes.ToString().Replace(',', '.'), com.id_componente));
-                            }
-                           
-                        }
-                        sql.Add("update registro_control set Numero=" + (Codigo + 1) + " where Codigo=8");
+                this.Session["LongActionProgress"] = 0;
+                ThreadPool.QueueUserWorkItem(guardar);
+                this.ResourceManager1.AddScript("{0}.startTask('longactionprogress');", this.TaskManager1.ClientID);
+               
+        }
 
 
-                        this.Session.Remove("estadoProcDe");
-                        this.Session.Remove("ListaActivos");
-
-                        if (conexion.EjecutarTransaccion(sql))
-                        {
-                            X.Msg.Info(new InfoPanel
-                            {
-                                Title = "Notificación",
-                                Icon = Icon.Accept,
-                                Html = "Registros Grabados.",
-                                HideDelay = 1500,
-
-                            }).Show();
-                        }
-                        else
-                        {
-                            X.Msg.Info(new InfoPanel
-                            {
-                                Title = "Notificación",
-                                Icon = Icon.Accept,
-                                Html = "Error al guardar.",
-                                HideDelay = 1500,
-                           
-                            }).Show();
-                        }
-                        
-                        btnCargarPlano.Disabled = true;
-                        btn_procesar.Disabled = true;
-                        btnGrabar.Disabled = true;
-                        cargarGrillaActivos();
-                        FechaUDepreciacionMinima();
-                        Progress1.UpdateProgress(0, "    ");
-                        
-
-
-                    }
-                    else
-                    {
-                        X.Msg.Info(new InfoPanel
-                        {
-                            Title = "DEPRECIACION NO REALIZADA",
-                            Icon = Icon.Exclamation,
-                            Html = "DEBE REALIZAR EL PROCESO DE DEPRECIACION ANTES."
-                        }).Show();
-                    }
-                }
-                else
-                {
-                    X.Msg.Info(new InfoPanel
-                    {
-                        Title = "CARGA DE ACTIVOS ERRONEA",
-                        Icon = Icon.Exclamation,
-                        Html = "VUELVE A CARGAR LOS ACTIVOS"
-                    }).Show();
-                }
-
-            //}
-            //catch (Exception exc)
+        [DirectMethod]
+        public void guardar(object state)
+        {
+            
+            Conexion_Mysql conexion = new Conexion_Mysql();
+            conexion.Tiempo = " ; default command timeout=990";
+            conexion.EjecutarTransaccion1(Global.sqldep,Session);
+            this.Session.Remove("LongActionProgress");
+            //if (conexion.EjecutarTransaccion(Global.sqldep))
             //{
-            //    X.MessageBox.Show(new MessageBoxConfig
+
+            //    X.Msg.Info(new InfoPanel
             //    {
-            //        Title = "Sigc. #_Error.",
-            //        Message = "Error: " + exc.Message + exc.StackTrace,
-            //        Buttons = MessageBox.Button.OK,
-            //        Icon = MessageBox.Icon.ERROR,
-            //        Closable = false
-            //    });
+            //        Title = "Notificación",
+            //        Icon = Icon.Accept,
+            //        Html = "Registros Grabados.",
+            //        HideDelay = 1500,
+
+            //    }).Show();
             //}
+            //else
+            //{
+            //    X.Msg.Info(new InfoPanel
+            //    {
+            //        Title = "Notificación",
+            //        Icon = Icon.Accept,
+            //        Html = "Error al guardar.",
+            //        HideDelay = 1500,
+
+            //    }).Show();
+            //}
+        }
+
+       
+        public void formarSql()
+        {
+            List<string> sql = new List<string>();
+            string fechaRevision = Convert.ToDateTime(dfd_fecha.Text).ToString("yyyy-MM-dd");
+            try
+            {
+                if (doc.ConsultarExistenciaDepreciacion() == 0)
+                {
+                    sql = doc.InsertDepreciacionInicial(fechaRevision);
+                }
+                int Codigo = doc.AutoGeneradorID(8);
+                string Rcontrol = "DP00" + Codigo;
+                if (Session["estadoProcDe"].ToString() == "true")
+                {
+                    sql.Add(doc.InsertarDocumentoDepreciacion(Rcontrol, "Depreciacion", fechaRevision));
+
+                    foreach (Activo act in Global.listDep)
+                    {
+
+                        sql.Add(string.Format("UPDATE activo SET Fecha_Udepreciacion='{0}',vr_Depreciacion = '{1}',"
+                                              + "Importe_libros = '{2}',vr_dep_mes = '{3}',BaseDepreciable='{4}'  "
+                                              + " WHERE idactivo= '{5}'",
+                                              fechaRevision, act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), act.baseDepreciable.ToString().Replace(',', '.'), act.idactivo));
+
+                        sql.Add(string.Format("INSERT INTO depreciacion(idactivo,responsable,vr_residual,vr_deterioro,vr_razonable,vr_depreciacion,ImporteLibros,dep_mes,fecha,login,FyH_Real,IDcontrol,baseDepreciable,IdGrupoAsignacionCentroCosto) "
+                                                             + " VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',now(),'{10}','{11}', "
+                                                               + " (SELECT a.IdgrupoAsignacionCentro from activos_fijos.asignacionactivo a WHERE a.idactivo ='" + act.idactivo + "' AND a.estado='A'));",
+                                                             act.idactivo, act.idresponsable, act.VrResidual.ToString().Replace(',', '.'), act.VrDeterioro.ToString().Replace(',', '.'), act.VrRazonable.ToString().Replace(',', '.'),
+                                                             act.VrDepreciacion.ToString().Replace(',', '.'), act.Importe_libros.ToString().Replace(',', '.'), act.dep_mes.ToString().Replace(',', '.'), fechaRevision,
+                                                             HttpContext.Current.User.Identity.Name.ToUpper(), Rcontrol, act.baseDepreciable.ToString().Replace(',', '.')));
+
+                        //sql.Add("Select @var:=max(id_depreciacion) FROM depreciacion ;");
+
+                        foreach (ActivoComponente com in act.Componente)
+                        {
+                            sql.Add(string.Format("INSERT INTO detalle_depreciacion(id_depreciacion,id_componente,depreciacion_mes,"
+                                + " baseDepreciable,ImporteLibros,dep_acum,unidad_dep,vr_residual,ajust_dep_acum,ajust_vr_razonable, "
+                                + " vr_deterioro,costo_inicial,idnorma,Fecha,FyH_Real,login,idtipodepreciacion,reexpresionVidaUtil,idactivo,vida_remanente,vida_utilizada,vidaUtil) "
+                                + "Values ("
+                                        + "LAST_INSERT_ID(), "
+                                        + "'{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',"
+                                        + "'{10}','{11}','{12}',now(),'{13}','{14}','{15}','{16}','{17}','{18}','{19}') ",
+                                        com.id_componente, com.vr_dep_mes.ToString().Replace(',', '.'), com.base_deprec.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
+                                        com.vr_dep_acumulada.ToString().Replace(',', '.'), com.unidad_dep.ToString().Replace(',', '.'), com.ajust_vr_residual.ToString().Replace(',', '.'), com.vr_dep_acumulada.ToString().Replace(',', '.'),
+                                        com.ajust_vr_razonable.ToString().Replace(',', '.'), com.ajust_vr_deterioro.ToString().Replace(',', '.'), com.costo_inicial.ToString().Replace(',', '.'), com.idtiponorma, act.Fecha_Revision, HttpContext.Current.User.Identity.Name.ToUpper(), com.id_tipodepreciacion, com.ajusteVidaUtil.ToString().Replace(',', '.'), com.id_activo, com.vida_util_remanente.ToString().Replace(',', '.'), com.vida_util_utilizado.ToString().Replace(',', '.'), com.vida_util));
+
+                            sql.Add(string.Format("UPDATE activo_componente SET vr_dep_acumulada= '{0}',vr_importe_libros= '{1}',"
+                                                 + " vida_util_utilizado='{2}', "
+                                                 + "vida_util_remanente='{3}',base_deprec='{4}', vr_dep_mes='{5}' "
+                                                 + " WHERE id_Componente = '{6}'",
+                                                 com.vr_dep_acumulada.ToString().Replace(',', '.'), com.vr_importe_libros.ToString().Replace(',', '.'),
+                                                 com.vida_util_utilizado.ToString().Replace(',', '.'),
+                                                 com.vida_util_remanente.ToString().Replace(',', '.'),
+                                                 com.base_deprec.ToString().Replace(',', '.'), com.vr_dep_mes.ToString().Replace(',', '.'), com.id_componente));
+                        }
+                    }
+
+                    sql.Add("update registro_control set Numero=" + (Codigo + 1) + " where Codigo=8");
+                    Global.listDep = null;
+                    Global.sqldep = sql;
+
+                }
+                //X.MessageBox.Notify("Error", "Datos Cargados").Show();
+
+            }
+            catch (Exception)
+            {
+                X.MessageBox.Notify("Error", "Datos no Cargados").Show();
+            }
+
         }
 
         /// <summary>
@@ -1102,12 +1242,18 @@ namespace Activos.Modulo
                         activo.Importe_libros = activo.Componente.Where(item => item.idtiponorma == "1").Sum(y => y.vr_importe_libros);
 
                         posicion = posicion + 1;
-                       
+
 
                         // Thread.Sleep(1);
                         this.Session["LongActionProgress"] = posicion;
                     }
-                    TempDep(ListaActivos);
+                    //TempDep(ListaActivos);
+                    Global.listDep = ListaActivos;
+                    Session.Remove("ListaActivos");
+                    Session.Remove("datosDepreciacion");
+
+                    //TempDep(ListaActivos);
+                    //Session["ListaActivos"] = ListaActivos;
                     Session["estadoProcDe"] = "true";
                 }
                 else
@@ -1134,8 +1280,12 @@ namespace Activos.Modulo
                         this.Session["LongActionProgress"] = posicion;
 
                     }
+                    Global.listDep = ListaActivos;
                     Session.Remove("ListaActivos");
-                    Session["ListaActivos"] = ListaActivos;
+                    Session.Remove("datosDepreciacion");
+
+                    //TempDep(ListaActivos);
+                    //Session["ListaActivos"] = ListaActivos;
                     Session["estadoProcDe"] = "true";
                 }
 
@@ -1170,13 +1320,27 @@ namespace Activos.Modulo
         {
             try
             {
-                string jsonn1 = JsonConvert.SerializeObject(ListaActivos);
-                string id_file = "_tempDep.json";
+                var activo = JsonConvert.SerializeObject(ListaActivos);
+                string id_file = "activo.txt";
                 string FilePath = HttpRuntime.AppDomainAppPath + @"TempDep\" + id_file;
-                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
                 StreamWriter plano = new StreamWriter(FilePath);
-                plano.WriteLine(json1);
+                plano.WriteLine(activo);
                 plano.Close();
+                foreach (Activo row in ListaActivos)
+                {
+
+                    foreach (ActivoComponente com in row.Componente)
+                    {
+                        var compIndividual = JsonConvert.SerializeObject(row.Componente);
+
+                    }
+
+
+                }
+                //";
+
+
+
 
             }
             catch (Exception e)
@@ -1190,7 +1354,7 @@ namespace Activos.Modulo
 
             try
             {
-                List<Activo> ListaActivos = (List<Activo>)Session["ListaActivos"];
+                List<Activo> ListaActivos = Global.listDep;
                 string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
                 ListaActivos = null;
                 string id_file = "prueba.txt";
@@ -1299,6 +1463,6 @@ namespace Activos.Modulo
         //}
         #endregion
 
-      
+
     }
 }

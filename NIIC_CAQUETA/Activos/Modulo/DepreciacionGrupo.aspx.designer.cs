@@ -85,6 +85,15 @@ namespace Activos.Modulo {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control HTIPOGUARDAR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Hidden HTIPOGUARDAR;
+        
+        /// <summary>
         /// Control Viewport1.
         /// </summary>
         /// <remarks>
@@ -227,6 +236,15 @@ namespace Activos.Modulo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Ext.Net.Hidden cantPlano;
+        
+        /// <summary>
+        /// Control HTIPOBAR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Hidden HTIPOBAR;
         
         /// <summary>
         /// Control estadoProcDe.
@@ -481,15 +499,6 @@ namespace Activos.Modulo {
         protected global::Ext.Net.Column Column13;
         
         /// <summary>
-        /// Control CommandColumn8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::Ext.Net.CommandColumn CommandColumn8;
-        
-        /// <summary>
         /// Control PagingToolbar2.
         /// </summary>
         /// <remarks>
@@ -571,6 +580,15 @@ namespace Activos.Modulo {
         protected global::Ext.Net.Button Button3;
         
         /// <summary>
+        /// Control BGUARDARFALT.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Button BGUARDARFALT;
+        
+        /// <summary>
         /// Control btnGrabar.
         /// </summary>
         /// <remarks>
@@ -578,6 +596,15 @@ namespace Activos.Modulo {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Ext.Net.Button btnGrabar;
+        
+        /// <summary>
+        /// Control Button5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Ext.Net.Button Button5;
         
         /// <summary>
         /// Control win_cargarplano.

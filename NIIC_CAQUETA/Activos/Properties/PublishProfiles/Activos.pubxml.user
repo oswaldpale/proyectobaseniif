@@ -45,7 +45,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/04/2016 10:26:44</publishTime>
     </File>
     <File Include="bin/Activos.dll">
-      <publishTime>06/08/2016 11:11:39</publishTime>
+      <publishTime>06/08/2016 22:47:02</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/04/2016 10:26:47</publishTime>
@@ -330,7 +330,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Modulo/DepreciacionGrupo.aspx">
-      <publishTime>06/07/2016 19:48:41</publishTime>
+      <publishTime>06/08/2016 22:08:38</publishTime>
     </File>
     <File Include="Modulo/DepreciacionGrupo.aspx.cs">
       <publishTime>10/04/2015 16:28:43</publishTime>
@@ -465,7 +465,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/08/2016 08:52:16</publishTime>
+      <publishTime>06/08/2016 22:47:11</publishTime>
     </File>
   </ItemGroup>
 </Project>

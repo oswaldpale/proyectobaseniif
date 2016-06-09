@@ -14,8 +14,8 @@
     <script src="JS/FileSaver.js"></script>
     <script src="JS/papaparse.js"></script>
     <link href="../Estilos/extjs-extension.css" rel="stylesheet" />
-    <%--<script src="http://gascaqueta.net/sigcweb/scripts/extjs-extension.js">
-    </script>--%>
+    <script src="http://gascaqueta.net/sigcweb/scripts/extjs-extension.js">
+    </script>
 
     <style type="text/css">
         /**/
@@ -98,6 +98,7 @@
                 <DirectEvents>
                     <Update OnEvent="RefreshProgress" />
                 </DirectEvents>
+              
             </ext:Task>
         </Tasks>
     </ext:TaskManager>
@@ -129,7 +130,7 @@
     </ext:Store>
 
     <form id="form1" runat="server">
-
+        <ext:Hidden ID="HTIPOGUARDAR" Text="1" runat="server" />
 
         <ext:Viewport ID="Viewport1" runat="server">
             <Items>
@@ -157,6 +158,8 @@
                                 <ext:Hidden ID="Cantidad" runat="server" />
                                 <ext:Hidden ID="estadoPlano" runat="server" />
                                 <ext:Hidden ID="cantPlano" runat="server" />
+                                <ext:Hidden ID="HTIPOBAR" runat="server" Text="Registrar" />
+
                                 <ext:Hidden ID="estadoProcDe" runat="server" />
                                 <ext:Hidden ID="EstadoUnidadUtilizada" runat="server" />
 
@@ -293,18 +296,6 @@
                                                                     <ext:Column ID="Column13" runat="server" DataIndex="importe" Header="Importe Libros" Flex="1">
                                                                         <Renderer Handler="return Ext.util.Format.number(value, '0,0.00');" />
                                                                     </ext:Column>
-                                                                    <ext:CommandColumn ID="CommandColumn8" runat="server" Align="Center" Width="70">
-                                                                        <Commands>
-                                                                            <ext:GridCommand CommandName="btnDetalleDepreciacion" Icon="ApplicationEdit" ToolTip-Text="Detalle Depreciacion">
-                                                                            </ext:GridCommand>
-                                                                            <ext:GridCommand CommandName="btnTrazabilidad" Icon="ApplicationViewDetail" ToolTip-Text="Trazabilidad del Activo" />
-                                                                        </Commands>
-
-                                                                        <Listeners>
-                                                                            <Command Handler="if(command=='btnDetalleDepreciacion'){ App.direct.cargarDatosDepreciacion(record.data['idActivo']);}
-                                                                                              else if(command=='btnTrazabilidad'){App.direct.cargarhistorialDepreciacion(record.data['idActivo'],record.data['Nombre'],record.data['placa']);App.win_trazabilidad.show();} " />
-                                                                        </Listeners>
-                                                                    </ext:CommandColumn>
                                                                 </Columns>
                                                             </ColumnModel>
                                                             <BottomBar>
@@ -338,8 +329,8 @@
                                         <Items>
                                             <ext:CheckMenuItem ID="CheckMenuItem_Activo" runat="server" Icon="PageExcel" Text="EXPORTAR:" Checked="true" Border="true">
                                                 </ext:CheckMenuItem>
-                                            <ext:Button runat="server" ID="Button1" Text="REPORTE PARTE 1"  AutoPostBack="true" OnClick="ToExcel1"   Icon="PageExcel" Scale="Small" Hidden="false" />
-                                              <ext:Button runat="server" ID="Button2" Text="REPORTE PARTE 2" AutoPostBack="true" OnClick="ToExcel2" Icon="PageExcel" Scale="Small" Hidden="false" />
+                                            <ext:Button runat="server" ID="Button1" Text="REPORTE PARTE 1"  AutoPostBack="true"    Icon="PageExcel" Scale="Small" Hidden="false" />
+                                              <ext:Button runat="server" ID="Button2" Text="REPORTE PARTE 2" AutoPostBack="true" Icon="PageExcel" Scale="Small" Hidden="false" />
                                            
                                         </Items>
                                        
@@ -352,11 +343,25 @@
                                         <Click Handler="App.direct.Excel();" />
                                     </Listeners>
                                 </ext:Button>
-                                <ext:Button runat="server" ID="btnGrabar" Text="GUARDAR" Icon="Disk" Scale="Small" Width="120">
+                                  <ext:Button runat="server" ID="BGUARDARFALT" Text="CargarDatos" Icon="Disk" Scale="Small" Width="120" Hidden="true"  >
                                     <Listeners>
-                                        <Click Handler="App.direct.grabarDepreciacion();" />
+                                        <Click Handler=" App.direct.formarSql();" />
                                     </Listeners>
                                 </ext:Button>
+                                <ext:Button runat="server" ID="btnGrabar" Text="GUARDAR" Icon="Disk" Scale="Small" Width="120" Hidden="true">
+                                    <Listeners>
+                                        <Click Handler="App.direct.guardar();" />
+                                    </Listeners>
+                                </ext:Button>
+                                 
+                                                <ext:Button runat="server"
+                                                    ID="Button5"
+                                                    Icon="CogGo"
+                                                    Text="GUARDAR"
+                                                    Width="150"
+                                                    Margins="5 5 0 5"
+                                                    OnDirectClick="IniciarProcesoGuardar" />
+                                
 
                             </Items>
                         </ext:Toolbar>
