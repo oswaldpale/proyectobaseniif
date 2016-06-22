@@ -142,7 +142,7 @@
     <Content Include="Modulo\Basica\MotivoDeterioro.aspx" />
     <Content Include="Modulo\Basica\Propiedad.aspx" />
     <Content Include="Modulo\Ajustes\ReexpresarVidaUtil.aspx" />
-    <Content Include="Modulo\ReporteTrazabilidad.aspx" />
+    <Content Include="Modulo\ReporteDepreciacionMes.aspx" />
     <Content Include="Modulo\Revaluacion.aspx" />
     <Content Include="Modulo\Basica\Subclase.aspx" />
     <Content Include="Modulo\Basica\SubComponente.aspx" />
@@ -309,12 +309,12 @@
     <Compile Include="Modulo\Ajustes\ReexpresarVidaUtil.aspx.designer.cs">
       <DependentUpon>ReexpresarVidaUtil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo\ReporteTrazabilidad.aspx.cs">
-      <DependentUpon>ReporteTrazabilidad.aspx</DependentUpon>
+    <Compile Include="Modulo\ReporteDepreciacionMes.aspx.cs">
+      <DependentUpon>ReporteDepreciacionMes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Modulo\ReporteTrazabilidad.aspx.designer.cs">
-      <DependentUpon>ReporteTrazabilidad.aspx</DependentUpon>
+    <Compile Include="Modulo\ReporteDepreciacionMes.aspx.designer.cs">
+      <DependentUpon>ReporteDepreciacionMes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulo\Revaluacion.aspx.cs">
       <DependentUpon>Revaluacion.aspx</DependentUpon>

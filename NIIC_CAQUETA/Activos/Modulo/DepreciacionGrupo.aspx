@@ -24,14 +24,17 @@
         }
     </style>
     <script type="text/javascript">
-        
+       
+
+        //************GENERADOR DE CSV***************
         var descargaCSV = function (url) {
-            App.w1.show();            
+            App.w1.show();
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {                    
-                    var myArr = JSON.parse(xmlhttp.responseText);
-                    myFunction(myArr);                    
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    // data = xmlhttp.responseText;
+                    //var myArr = JSON.parse(xmlhttp.responseText);
+                    myFunction(xmlhttp.responseText);
                 }
             }
             xmlhttp.open("GET", url, true);
@@ -40,12 +43,12 @@
 
         function myFunction(arr) {
             var BOM = "\uFEFF";
-            var csv = BOM + Papa.unparse(arr, { delimiter: ";" });
+            var csv = BOM + arr;// Papa.unparse(arr, { delimiter: "," });
             var blob = new Blob([csv], { type: "text/csv;charset=UTF-8" });
-            saveAs(blob, "Depreciacion.csv");
+            saveAs(blob, "_Depreciacion" + ".csv");
             App.w1.hide();
-        }
-
+        };
+        //*******************************************
 
 
         var saveData = function () {

@@ -5,13 +5,15 @@ using System.Linq;
 using System.Web;
 using Ext.Net;
 using System.Web.UI.WebControls;
-
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Activos.Clases
 {
     public class GeneradorReportes
     {
         #region Informes
+        Conexion_Mysql conexion = new Conexion_Mysql();
         public string ConsultarTrazabilidadReporte(string IdActivo,string TipoNorma) {
             string CadenaNorma = (TipoNorma == "") ? "" : "    AND a.TipoNorma = '" + TipoNorma + "' ";
             string cad = "SELECT "
@@ -475,46 +477,128 @@ namespace Activos.Clases
         /// <param name="ListaActivos"></param>
         /// <param name="parteExcel"></param>
         /// <returns></returns>
-        public List<ListaComponenteExcel> ListaActivosDeprExcel(List<Activo> ListaActivos,string parteExcel)
+        public bool ListaActivosDeprExcel(List<Activo> ListaActivos,string FilePath)
         {
-            List<ListaComponenteExcel> ListaExcel = new List<ListaComponenteExcel>();
-            
-            foreach (Activo itemActivo in ListaActivos)
+
+            try
             {
-                foreach (ActivoComponente itemcomp in itemActivo.Componente)
+                StreamWriter plano = new StreamWriter(FilePath);
+                string encabezado = "SUBCLASE;PLACA;FECHA_U_DEPRECIACION;FECHA_REVISION;NO_COMPRA;NOMBRE_COMPONENTE;NOMBRE _NORMA;TIPO_DEPRECIACION;PORCENTAJE;VIDA_UTIL;UNIDAD_DEP;VIDA_UTIL_UTILIZADO;VIDA_UTIL_REMANENTE;COSTO_INICIAL;AJUSTE_RESIDUAL;AJUSTE_DETERIORO;AJUSTE_RAZONABLE;DEP_MES;DEP_ACUMULADA_ANTERIOR;DEP_ACUMULADA;BASE_DEPRECIABLE_ANTERIOR;BASE_DEPRECIABLE;IMPORTE_LIBROS";
+
+                plano.WriteLine(encabezado);
+                foreach (Activo itemActivo in ListaActivos)
                 {
-                    ListaComponenteExcel comp = new ListaComponenteExcel();
-                    comp.NombreSubclase = itemActivo.nombresubclase;
-                    comp.Placa = itemActivo.Placa;
-                    comp.FechaDepreciacionActual = itemActivo.Fecha_Udepreciacion;
-                    comp.FechaRevision = itemActivo.Fecha_Revision;
-                    comp.NoCompra = itemActivo.NoCompra;
-                    comp.NombreComponente = itemcomp.nombre_componente;
-                    comp.Norma = itemcomp.NombreNorma;
-                    comp.TipoDepreciacion = itemcomp.nombre_depreciacion;
-                    comp.Porcentaje = itemcomp.Porcentaje_ci;
-                    comp.VidaUtil = itemcomp.vida_util;
-                    comp.UnidadMes = itemcomp.unidad_dep;
-                    comp.VidaEjecutada = itemcomp.vida_util_utilizado;
-                    comp.VidaRemanente = itemcomp.vida_util_remanente;
-                    comp.CostoInicial = itemcomp.costo_inicial;
-                    comp.Residual = itemcomp.ajust_vr_residual;
-                    comp.Deterioro = itemcomp.ajust_vr_deterioro;
-                    comp.Razonable = itemcomp.ajust_vr_razonable;
-                    comp.DepreciacionMes = itemcomp.vr_dep_mes;
-                    comp.DepreciacionAcumuladaAnterior = itemcomp.vr_dep_acumulada_old;
-                    comp.DepreciacionAcumulada = itemcomp.vr_dep_acumulada;
-                    comp.BaseDepreciableAnterior = itemcomp.base_deprec_old;
-                    comp.BaseDepreciable = itemcomp.base_deprec;
-                    comp.ImporteLibros = itemcomp.vr_importe_libros;
-                    ListaExcel.Add(comp);
+                 
+                    foreach (ActivoComponente itemcomp in itemActivo.Componente)
+                    {
+                        
+                        string linea = string.Empty;
+                        linea += itemActivo.nombresubclase.ToString() + ";";
+                        linea += itemActivo.Placa.ToString() + ";";
+                        linea += itemActivo.Fecha_Udepreciacion.ToString() + ";";
+                        linea += itemActivo.Fecha_Revision.ToString() + ";";
+                        linea += itemActivo.NoCompra.ToString() + ";";
+                        linea += itemcomp.nombre_componente.ToString() + ";";
+                        linea += itemcomp.NombreNorma.ToString() + ";";
+                        linea += itemcomp.nombre_depreciacion.ToString() + ";";
+                        linea += itemcomp.Porcentaje_ci.ToString() + ";";
+                        linea += itemcomp.vida_util.ToString() + ";";
+                        linea += itemcomp.unidad_dep.ToString() + ";";
+                        linea += itemcomp.vida_util_utilizado.ToString() + ";";
+                        linea += itemcomp.vida_util_remanente.ToString() + ";";
+                        linea += itemcomp.costo_inicial.ToString() + ";";
+                        linea += itemcomp.ajust_vr_residual.ToString() + ";";
+                        linea += itemcomp.ajust_vr_deterioro.ToString() + ";";
+                        linea += itemcomp.ajust_vr_razonable.ToString() + ";";
+                        linea += itemcomp.vr_dep_mes.ToString() + ";";
+                        linea += itemcomp.vr_dep_acumulada_old.ToString() + ";";
+                        linea += itemcomp.vr_dep_acumulada.ToString() + ";";
+                        linea += itemcomp.base_deprec_old.ToString() + ";";
+                        linea += itemcomp.base_deprec.ToString() + ";";
+                        linea += itemcomp.vr_importe_libros.ToString() + ";";
+
+                        linea = linea.TrimEnd(';');
+                        plano.WriteLine(linea);
+
+                    }
+                  
                 }
+                plano.Close();
+                return true;
             }
-
-            return ListaExcel;
+            catch (Exception)
+            {
+                return false;
+            }
+           
         }
-    }
 
+        #region REPORTE DEPRECIACION MES
+        public DataTable ConsultarControlDepreciacionMes()
+        {
+            String sql = @"SELECT
+                                rcd.Ncontrol AS CODIGO,
+                                CONCAT(IF(rcd.Descripcion ='Entrada','ENTRADA ANTES DEL','DEPRECIACIÓN DEL'),' ', Date_format(
+                                rcd.Fecha, '%d-%m-%Y')) AS DESCRIPCION
+                            FROM
+                                activos_fijos.registro_control_depreciacion rcd
+                            WHERE rcd.Estado = 'Activo'
+                            ORDER BY
+                                rcd.Fecha,
+                                rcd.Ncontrol";
+
+           return conexion.EjecutarSelectMysql(sql).Tables[0];
+        }
+
+        public DataTable ConsultarDepreciacionMes(string codigo) {
+
+            string sql = @"SELECT
+	                         sc.Componente 				     AS SUBCLASE,
+                            a.placa                          AS PLACA,
+                            Date_format(dd.Fecha,'%d-%m-%Y') AS FECHA_REVISION,
+                            a.NoCompra 					     AS NO_COMPRA,
+                            sc.Componente                    AS NOMBRE_COMPONENTE,
+                            tn.Norma                         AS NOMBRE_NORMA,
+                            ttd.Depreciacion                 AS TIPO_DEPRECIACION,
+                            ac.Porcentaje_ci                 AS PORCENTAJE,
+                            dd.vidaUtil                      AS VIDA_UTIL,
+                            dd.unidad_dep                    AS UNIDAD_DEP,
+                            dd.vida_utilizada                AS VIDA_UTIL_UTILIZADO,
+                            dd.vida_remanente                AS VIDA_UTIL_REMANENTE,
+                            dd.Costo_Inicial                 AS COSTO_INICIAL,
+                            dd.vr_residual                   AS AJUSTE_RESIDUAL,
+                            dd.vr_deterioro                  AS AJUSTE_DETERIORO,
+                            dd.ajust_vr_razonable            AS AJUSTE_RAZONABLE,
+                            dd.depreciacion_mes 			 AS DEP_MES,
+                            dd.dep_acum 					 AS DEP_ACUMULADA,
+                            dd.baseDepreciable 				 AS BASE_DEPRECIABLE,
+                            dd.ImporteLibros 				 AS IMPORTE_LIBROS
+                        FROM
+                            detalle_depreciacion dd
+                        INNER JOIN depreciacion d
+                        ON
+                            dd.id_depreciacion = d.id_depreciacion
+                        INNER JOIN activo a 
+                        ON  d.idactivo = a.idActivo 
+                        INNER JOIN activo_componente ac
+                        ON
+                        dd.id_componente = ac.id_Componente
+                        INNER JOIN tb_tipo_norma tn
+                        ON
+                        dd.idnorma =tn.id_tipo_Norma
+                        INNER JOIN tb_tipo_depreciacion ttd
+                        ON
+                            dd.idtipodepreciacion=ttd.id_tipo
+                        INNER JOIN subclase_componente sc
+                        ON
+                            ac.sub_compID = sc.id_componente
+                        WHERE
+                            d.IDcontrol = '" + codigo + "'";
+            return conexion.EjecutarSelectMysql(sql).Tables[0];
+        }
+        #endregion
+
+    }
     public class ListaComponenteExcel
     {
         public string FechaDepreciacionActual { get; set; }
@@ -524,21 +608,23 @@ namespace Activos.Clases
         public string Placa { get; set; }
         public string NombreComponente { get; set; }
         public string Norma { get; set; }
-        public double Porcentaje { get; set; }
+        public string Porcentaje { get; set; }
         public string TipoDepreciacion { get; set; }
-        public double VidaUtil { get; set; }
-        public double UnidadMes { get; set; }
-        public double VidaEjecutada { get; set; }
-        public double VidaRemanente { get; set; }
-        public double CostoInicial { get; set; }
-        public double Residual { get; set; }
-        public double Razonable { get; set; }
-        public double Deterioro { get; set; }
-        public double DepreciacionMes { get; set; }
-        public double DepreciacionAcumuladaAnterior { get; set; }
-        public double DepreciacionAcumulada { get; set; }
-        public double BaseDepreciableAnterior { get; set; }
-        public double BaseDepreciable { get; set; }
-        public double ImporteLibros { get; set; }
+        public string VidaUtil { get; set; }
+        public string UnidadMes { get; set; }
+        public string VidaEjecutada { get; set; }
+        public string VidaRemanente { get; set; }
+        public string CostoInicial { get; set; }
+        public string Residual { get; set; }
+        public string Razonable { get; set; }
+        public string Deterioro { get; set; }
+        public string DepreciacionMes { get; set; }
+        public string DepreciacionAcumuladaAnterior { get; set; }
+        public string DepreciacionAcumulada { get; set; }
+        public string BaseDepreciableAnterior { get; set; }
+        public string BaseDepreciable { get; set; }
+        public string ImporteLibros { get; set; }
     }
+
+   
 }

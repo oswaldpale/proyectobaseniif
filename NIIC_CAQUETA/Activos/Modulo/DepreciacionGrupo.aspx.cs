@@ -1348,22 +1348,19 @@ namespace Activos.Modulo
                 this.Response.End();
             }
         }
-        [DirectMethod(Msg = "Cargando...", ShowMask = true, Target = MaskTarget.CustomTarget)]
+        [DirectMethod(Timeout=800000)]
         public void Excel()
         {
 
             try
             {
-                List<Activo> ListaActivos = Global.listDep;
-                string jsonn1 = JsonConvert.SerializeObject(Informe.ListaActivosDeprExcel(ListaActivos, "Parte1"));
-                ListaActivos = null;
                 string id_file = "prueba.txt";
                 string FilePath = HttpRuntime.AppDomainAppPath + @"Planos\" + id_file;
-                StreamWriter plano = new StreamWriter(FilePath);
-                plano.WriteLine(jsonn1);
-                plano.Close();
-                Thread.Sleep(5000);
-                X.AddScript("descargaCSV('../Planos/prueba.txt');");
+                if (Informe.ListaActivosDeprExcel(Global.listDep, FilePath))
+                {
+                    X.AddScript("descargaCSV('../Planos/prueba.txt');");
+                }
+                
             }
             catch (Exception)
             {
